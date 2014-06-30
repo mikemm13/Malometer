@@ -1,0 +1,500 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		491AB7E31961685E00548C9D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 491AB7E21961685E00548C9D /* Foundation.framework */; };
+		491AB7E51961685E00548C9D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 491AB7E41961685E00548C9D /* CoreGraphics.framework */; };
+		491AB7E71961685E00548C9D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 491AB7E61961685E00548C9D /* UIKit.framework */; };
+		491AB7E91961685E00548C9D /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 491AB7E81961685E00548C9D /* CoreData.framework */; };
+		491AB7EF1961685E00548C9D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 491AB7ED1961685E00548C9D /* InfoPlist.strings */; };
+		491AB7F11961685E00548C9D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 491AB7F01961685E00548C9D /* main.m */; };
+		491AB7F51961685E00548C9D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 491AB7F41961685E00548C9D /* AppDelegate.m */; };
+		491AB7F81961685E00548C9D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 491AB7F61961685E00548C9D /* Main.storyboard */; };
+		491AB7FB1961685E00548C9D /* Malometer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 491AB7F91961685E00548C9D /* Malometer.xcdatamodeld */; };
+		491AB7FE1961685E00548C9D /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 491AB7FD1961685E00548C9D /* MasterViewController.m */; };
+		491AB8011961685E00548C9D /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 491AB8001961685E00548C9D /* DetailViewController.m */; };
+		491AB8031961685E00548C9D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 491AB8021961685E00548C9D /* Images.xcassets */; };
+		491AB80A1961685E00548C9D /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 491AB8091961685E00548C9D /* XCTest.framework */; };
+		491AB80B1961685E00548C9D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 491AB7E21961685E00548C9D /* Foundation.framework */; };
+		491AB80C1961685E00548C9D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 491AB7E61961685E00548C9D /* UIKit.framework */; };
+		491AB80D1961685E00548C9D /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 491AB7E81961685E00548C9D /* CoreData.framework */; };
+		491AB8151961685E00548C9D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 491AB8131961685E00548C9D /* InfoPlist.strings */; };
+		491AB8171961685E00548C9D /* MalometerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 491AB8161961685E00548C9D /* MalometerTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		491AB80E1961685E00548C9D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 491AB7D71961685E00548C9D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 491AB7DE1961685E00548C9D;
+			remoteInfo = Malometer;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		491AB7DF1961685E00548C9D /* Malometer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Malometer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		491AB7E21961685E00548C9D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		491AB7E41961685E00548C9D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		491AB7E61961685E00548C9D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		491AB7E81961685E00548C9D /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		491AB7EC1961685E00548C9D /* Malometer-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Malometer-Info.plist"; sourceTree = "<group>"; };
+		491AB7EE1961685E00548C9D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		491AB7F01961685E00548C9D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		491AB7F21961685E00548C9D /* Malometer-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Malometer-Prefix.pch"; sourceTree = "<group>"; };
+		491AB7F31961685E00548C9D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		491AB7F41961685E00548C9D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		491AB7F71961685E00548C9D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		491AB7FA1961685E00548C9D /* Malometer.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Malometer.xcdatamodel; sourceTree = "<group>"; };
+		491AB7FC1961685E00548C9D /* MasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
+		491AB7FD1961685E00548C9D /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
+		491AB7FF1961685E00548C9D /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		491AB8001961685E00548C9D /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		491AB8021961685E00548C9D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		491AB8081961685E00548C9D /* MalometerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MalometerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		491AB8091961685E00548C9D /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		491AB8121961685E00548C9D /* MalometerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MalometerTests-Info.plist"; sourceTree = "<group>"; };
+		491AB8141961685E00548C9D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		491AB8161961685E00548C9D /* MalometerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MalometerTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		491AB7DC1961685E00548C9D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				491AB7E51961685E00548C9D /* CoreGraphics.framework in Frameworks */,
+				491AB7E91961685E00548C9D /* CoreData.framework in Frameworks */,
+				491AB7E71961685E00548C9D /* UIKit.framework in Frameworks */,
+				491AB7E31961685E00548C9D /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		491AB8051961685E00548C9D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				491AB80A1961685E00548C9D /* XCTest.framework in Frameworks */,
+				491AB80D1961685E00548C9D /* CoreData.framework in Frameworks */,
+				491AB80C1961685E00548C9D /* UIKit.framework in Frameworks */,
+				491AB80B1961685E00548C9D /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		491AB7D61961685E00548C9D = {
+			isa = PBXGroup;
+			children = (
+				491AB7EA1961685E00548C9D /* Malometer */,
+				491AB8101961685E00548C9D /* MalometerTests */,
+				491AB7E11961685E00548C9D /* Frameworks */,
+				491AB7E01961685E00548C9D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		491AB7E01961685E00548C9D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				491AB7DF1961685E00548C9D /* Malometer.app */,
+				491AB8081961685E00548C9D /* MalometerTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		491AB7E11961685E00548C9D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				491AB7E21961685E00548C9D /* Foundation.framework */,
+				491AB7E41961685E00548C9D /* CoreGraphics.framework */,
+				491AB7E61961685E00548C9D /* UIKit.framework */,
+				491AB7E81961685E00548C9D /* CoreData.framework */,
+				491AB8091961685E00548C9D /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		491AB7EA1961685E00548C9D /* Malometer */ = {
+			isa = PBXGroup;
+			children = (
+				491AB7F31961685E00548C9D /* AppDelegate.h */,
+				491AB7F41961685E00548C9D /* AppDelegate.m */,
+				491AB7F61961685E00548C9D /* Main.storyboard */,
+				491AB7FC1961685E00548C9D /* MasterViewController.h */,
+				491AB7FD1961685E00548C9D /* MasterViewController.m */,
+				491AB7FF1961685E00548C9D /* DetailViewController.h */,
+				491AB8001961685E00548C9D /* DetailViewController.m */,
+				491AB8021961685E00548C9D /* Images.xcassets */,
+				491AB7F91961685E00548C9D /* Malometer.xcdatamodeld */,
+				491AB7EB1961685E00548C9D /* Supporting Files */,
+			);
+			path = Malometer;
+			sourceTree = "<group>";
+		};
+		491AB7EB1961685E00548C9D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				491AB7EC1961685E00548C9D /* Malometer-Info.plist */,
+				491AB7ED1961685E00548C9D /* InfoPlist.strings */,
+				491AB7F01961685E00548C9D /* main.m */,
+				491AB7F21961685E00548C9D /* Malometer-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		491AB8101961685E00548C9D /* MalometerTests */ = {
+			isa = PBXGroup;
+			children = (
+				491AB8161961685E00548C9D /* MalometerTests.m */,
+				491AB8111961685E00548C9D /* Supporting Files */,
+			);
+			path = MalometerTests;
+			sourceTree = "<group>";
+		};
+		491AB8111961685E00548C9D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				491AB8121961685E00548C9D /* MalometerTests-Info.plist */,
+				491AB8131961685E00548C9D /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		491AB7DE1961685E00548C9D /* Malometer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 491AB81A1961685E00548C9D /* Build configuration list for PBXNativeTarget "Malometer" */;
+			buildPhases = (
+				491AB7DB1961685E00548C9D /* Sources */,
+				491AB7DC1961685E00548C9D /* Frameworks */,
+				491AB7DD1961685E00548C9D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Malometer;
+			productName = Malometer;
+			productReference = 491AB7DF1961685E00548C9D /* Malometer.app */;
+			productType = "com.apple.product-type.application";
+		};
+		491AB8071961685E00548C9D /* MalometerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 491AB81D1961685E00548C9D /* Build configuration list for PBXNativeTarget "MalometerTests" */;
+			buildPhases = (
+				491AB8041961685E00548C9D /* Sources */,
+				491AB8051961685E00548C9D /* Frameworks */,
+				491AB8061961685E00548C9D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				491AB80F1961685E00548C9D /* PBXTargetDependency */,
+			);
+			name = MalometerTests;
+			productName = MalometerTests;
+			productReference = 491AB8081961685E00548C9D /* MalometerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		491AB7D71961685E00548C9D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = ironhack;
+				TargetAttributes = {
+					491AB8071961685E00548C9D = {
+						TestTargetID = 491AB7DE1961685E00548C9D;
+					};
+				};
+			};
+			buildConfigurationList = 491AB7DA1961685E00548C9D /* Build configuration list for PBXProject "Malometer" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 491AB7D61961685E00548C9D;
+			productRefGroup = 491AB7E01961685E00548C9D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				491AB7DE1961685E00548C9D /* Malometer */,
+				491AB8071961685E00548C9D /* MalometerTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		491AB7DD1961685E00548C9D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				491AB8031961685E00548C9D /* Images.xcassets in Resources */,
+				491AB7EF1961685E00548C9D /* InfoPlist.strings in Resources */,
+				491AB7F81961685E00548C9D /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		491AB8061961685E00548C9D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				491AB8151961685E00548C9D /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		491AB7DB1961685E00548C9D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				491AB8011961685E00548C9D /* DetailViewController.m in Sources */,
+				491AB7FE1961685E00548C9D /* MasterViewController.m in Sources */,
+				491AB7F51961685E00548C9D /* AppDelegate.m in Sources */,
+				491AB7F11961685E00548C9D /* main.m in Sources */,
+				491AB7FB1961685E00548C9D /* Malometer.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		491AB8041961685E00548C9D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				491AB8171961685E00548C9D /* MalometerTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		491AB80F1961685E00548C9D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 491AB7DE1961685E00548C9D /* Malometer */;
+			targetProxy = 491AB80E1961685E00548C9D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		491AB7ED1961685E00548C9D /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				491AB7EE1961685E00548C9D /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		491AB7F61961685E00548C9D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				491AB7F71961685E00548C9D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		491AB8131961685E00548C9D /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				491AB8141961685E00548C9D /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		491AB8181961685E00548C9D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		491AB8191961685E00548C9D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		491AB81B1961685E00548C9D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Malometer/Malometer-Prefix.pch";
+				INFOPLIST_FILE = "Malometer/Malometer-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		491AB81C1961685E00548C9D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Malometer/Malometer-Prefix.pch";
+				INFOPLIST_FILE = "Malometer/Malometer-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		491AB81E1961685E00548C9D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Malometer.app/Malometer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Malometer/Malometer-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "MalometerTests/MalometerTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		491AB81F1961685E00548C9D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Malometer.app/Malometer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Malometer/Malometer-Prefix.pch";
+				INFOPLIST_FILE = "MalometerTests/MalometerTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		491AB7DA1961685E00548C9D /* Build configuration list for PBXProject "Malometer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				491AB8181961685E00548C9D /* Debug */,
+				491AB8191961685E00548C9D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		491AB81A1961685E00548C9D /* Build configuration list for PBXNativeTarget "Malometer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				491AB81B1961685E00548C9D /* Debug */,
+				491AB81C1961685E00548C9D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		491AB81D1961685E00548C9D /* Build configuration list for PBXNativeTarget "MalometerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				491AB81E1961685E00548C9D /* Debug */,
+				491AB81F1961685E00548C9D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		491AB7F91961685E00548C9D /* Malometer.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				491AB7FA1961685E00548C9D /* Malometer.xcdatamodel */,
+			);
+			currentVersion = 491AB7FA1961685E00548C9D /* Malometer.xcdatamodel */;
+			path = Malometer.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 491AB7D71961685E00548C9D /* Project object */;
+}
