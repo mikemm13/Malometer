@@ -7,6 +7,7 @@
 //
 
 #import "AgentEditViewController.h"
+#import "Agent.h"
 
 static NSArray *destructionValues;
 static NSArray *motivationValues;
@@ -78,35 +79,35 @@ static NSArray *assessmentValues;
 }
 
 - (IBAction)saveAgentInfo:(id)sender {
-    [self.detailAgent setValue:self.nameTextField.text forKey:@"name"];
+    self.detailAgent.name = self.nameTextField.text;
     [self.delegate dismissDetailViewController:self modifiedData:YES];
 }
 
 - (IBAction)destructionPowerChanged:(id)sender {
     NSNumber *stepperValue = [NSNumber numberWithFloat:self.destructionPowerStepper.value];
-    [self.detailAgent setValue:stepperValue forKey:@"destructionPower"];
-    NSNumber *returnedStepperValue = [self.detailAgent valueForKey:@"destructionPower"] ;
+    self.detailAgent.destructionPower = stepperValue;
+    NSNumber *returnedStepperValue = self.detailAgent.destructionPower;
     self.assessment.text = [NSString stringWithFormat:@"Destruction: %f", [returnedStepperValue floatValue]];
     [self changeDestructionPowerValue];
 }
 
 - (void)changeDestructionPowerValue{
-    NSNumber *stepperValue = [self.detailAgent valueForKey:@"destructionPower"] ;
+    NSNumber *stepperValue = self.detailAgent.destructionPower;
     self.destructionPowerValue.text = destructionValues[[stepperValue intValue]];
     self.destructionPowerStepper.value = [stepperValue floatValue];
 }
 
 - (IBAction)motivationChanged:(id)sender {
     NSNumber *stepperValue = [NSNumber numberWithFloat:self.motivationStepper.value];
-    [self.detailAgent setValue:stepperValue forKey:@"motivation"];
-    NSNumber *returnedStepperValue = [self.detailAgent valueForKey:@"motivation"] ;
+    self.detailAgent.motivation = stepperValue;
+    NSNumber *returnedStepperValue = self.detailAgent.motivation ;
     self.assessment.text = [NSString stringWithFormat:@"Motivation: %f", [returnedStepperValue floatValue]];
     [self changeMotivationValue];
 }
 
 - (void)changeMotivationValue{
     
-    NSNumber *stepperValue = [self.detailAgent valueForKey:@"motivation"] ;
+    NSNumber *stepperValue = self.detailAgent.motivation;
     self.motivationValue.text = motivationValues[[stepperValue intValue]];
     self.motivationStepper.value = [stepperValue floatValue];
 }

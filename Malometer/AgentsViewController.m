@@ -9,6 +9,7 @@
 #import "AgentsViewController.h"
 
 #import "AgentEditViewController.h"
+#import "Agent.h"
 
 static NSString *segueIdentifier = @"CreateAgent";
 
@@ -109,7 +110,7 @@ static NSString *segueIdentifier = @"CreateAgent";
     AgentEditViewController *destinationVC = (AgentEditViewController *)[[segue destinationViewController] topViewController];
     [self.managedObjectContext.undoManager beginUndoGrouping];
 
-    NSManagedObject *agent = [NSEntityDescription insertNewObjectForEntityForName:@"Agent" inManagedObjectContext:self.managedObjectContext];
+    Agent *agent = [NSEntityDescription insertNewObjectForEntityForName:@"Agent" inManagedObjectContext:self.managedObjectContext];
     [destinationVC setDetailAgent:agent];
     destinationVC.delegate = self;
 }
@@ -207,8 +208,8 @@ static NSString *segueIdentifier = @"CreateAgent";
 
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
 {
-    NSManagedObject *object = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    cell.textLabel.text = [[object valueForKey:@"name"] description];
+    Agent *agent =  [self.fetchedResultsController objectAtIndexPath:indexPath];
+    cell.textLabel.text = agent.name;
 }
 
 #pragma mark - Delegate methods
