@@ -64,8 +64,25 @@ static NSArray *assessmentValues;
     self.motivationStepper.value = 0;
     self.destructionPowerStepper.value = 0;
     
-    
-    
+}
+
+- (void)viewWillAppear:(BOOL)animated{
+    [self.detailAgent addObserver:self forKeyPath:@"destructionPower" options:0 context:nil];
+    [self.detailAgent addObserver:self forKeyPath:@"motivation" options:0 context:nil];
+}
+
+- (void)viewWillDisappear:(BOOL)animated{
+    [self.detailAgent removeObserver:self forKeyPath:@"destructionPower"];
+    [self.detailAgent removeObserver:self forKeyPath:@"motivation"];
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context{
+    if ([keyPath isEqualToString:@"destructionPower"]) {
+        [self changeDestructionPowerValue];
+    } else if ([keyPath isEqualToString:@"motivation"]){
+        [self changeMotivationValue];
+    }
+        
 }
 
 - (void)didReceiveMemoryWarning
@@ -88,7 +105,6 @@ static NSArray *assessmentValues;
     self.detailAgent.destructionPower = stepperValue;
     NSNumber *returnedStepperValue = self.detailAgent.destructionPower;
     self.assessment.text = [NSString stringWithFormat:@"Destruction: %f", [returnedStepperValue floatValue]];
-    [self changeDestructionPowerValue];
 }
 
 - (void)changeDestructionPowerValue{
