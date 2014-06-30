@@ -10,7 +10,7 @@
 #import "DetailVCDelegate.h"
 @class Agent;
 
-@interface AgentEditViewController : UIViewController
+@interface AgentEditViewController : UIViewController <UITextFieldDelegate>
 
 @property (strong, nonatomic) Agent *detailAgent;
 @property (weak, nonatomic) id<DetailVCDelegate> delegate;

@@ -40,60 +40,78 @@ static NSArray *assessmentValues;
         [self configureView];
     }
 }
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    // Do any additional setup after loading the view, typically from a nib.
+    [self configureView];
+    
+    self.nameTextField.delegate = self;
+    
+}
 
 - (void)configureView
 {
     // Update the user interface for the detail item.
+    [self displayAgentName];
+    [self initializeAssesmentView];
+    [self initializeDestroyPowerViews];
+    [self initializeMotivationViews];
 
     
 }
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
-    [self configureView];
-    destructionValues = @[@"None",@"Little girl", @"Neutral", @"Killer", @"Massive destruction"];
-    motivationValues = @[@"None", @"Bored", @"OK", @"Motivated", @"Very motivated"];
-    assessmentValues = @[@"No Way", @"Better Not", @"Maybe", @"Yes", @"A Must"];
-    
-    [self changeAssessment];
-    [self changeDestructionPowerValue];
-    [self changeMotivationValue];
-
-//    self.motivationStepper.value = 0;
-//    self.destructionPowerStepper.value = 0;
-    
+- (void) initializeAssesmentView {
+    assessmentValues = @[@"No way", @"Better not", @"Maybe", @"Yes", @"A must"];
+    [self displayAssessmentLabel];
 }
+
+- (void) initializeDestroyPowerViews {
+    destructionValues = @[@"Soft", @"Weak", @"Potential", @"Destroyer", @"Nuke"];
+    [self initializeDestroyPowerStepper];
+    [self displayDestructionPowerLabel];
+}
+
+- (void) initializeDestroyPowerStepper {
+    self.destructionPowerStepper.value = [self.detailAgent.destructionPower doubleValue];
+}
+
+- (void) initializeMotivationViews {
+    motivationValues = @[@"Doesn't care", @"Would like to", @"Quite focused", @"Interested", @"Goal"];
+    [self initializeMotivationStepper];
+    [self displayMotivationLabel];
+}
+
+- (void) initializeMotivationStepper {
+    self.motivationStepper.value = [self.detailAgent.motivation doubleValue];
+}
+
+
 
 - (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [self addObserverForProperties];
+}
+
+- (void)addObserverForProperties {
     [self.detailAgent addObserver:self forKeyPath:@"destructionPower" options:0 context:nil];
     [self.detailAgent addObserver:self forKeyPath:@"motivation" options:0 context:nil];
     [self.detailAgent addObserver:self forKeyPath:@"assessment" options:0 context:nil];
 }
 
+
 - (void)viewWillDisappear:(BOOL)animated{
+    [super viewDidDisappear:animated];
+    [self removeObserverForProperties];
+}
+
+- (void)removeObserverForProperties {
     [self.detailAgent removeObserver:self forKeyPath:@"destructionPower"];
     [self.detailAgent removeObserver:self forKeyPath:@"motivation"];
     [self.detailAgent removeObserver:self forKeyPath:@"assessment"];
 }
 
-- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context{
-    if ([keyPath isEqualToString:@"destructionPower"]) {
-        [self changeDestructionPowerValue];
-    } else if ([keyPath isEqualToString:@"motivation"]){
-        [self changeMotivationValue];
-    } else if ([keyPath isEqualToString:@"assessment"]){
-        [self changeAssessment];
-    }
-        
-}
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
 - (IBAction)cancelPressed:(id)sender {
     [self.delegate dismissDetailViewController:self modifiedData:NO];
@@ -116,22 +134,45 @@ static NSArray *assessmentValues;
     
 }
 
-- (void)changeAssessment{
-    NSNumber *assessment = self.detailAgent.assessment;
-    self.assessment.text = [assessmentValues objectAtIndex:[assessment intValue]];
-}
-
-- (void)changeDestructionPowerValue{
-    NSNumber *stepperValue = self.detailAgent.destructionPower;
-    self.destructionPowerValue.text = destructionValues[[stepperValue intValue]];
-    self.destructionPowerStepper.value = [stepperValue floatValue];
-}
-
-- (void)changeMotivationValue{
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context{
+    if ([keyPath isEqualToString:@"destructionPower"]) {
+        [self displayDestructionPowerLabel];
+    } else if ([keyPath isEqualToString:@"motivation"]){
+        [self displayMotivationLabel];
+    } else if ([keyPath isEqualToString:@"assessment"]){
+        [self displayAssessmentLabel];
+    }
     
-    NSNumber *stepperValue = self.detailAgent.motivation;
-    self.motivationValue.text = motivationValues[[stepperValue intValue]];
-    self.motivationStepper.value = [stepperValue floatValue];
+}
+
+- (void) displayAgentName {
+    self.nameTextField.text = self.detailAgent.name;
+}
+
+- (void) displayDestructionPowerLabel {
+    NSUInteger destructionPower = [self.detailAgent.destructionPower unsignedIntegerValue];
+    self.destructionPowerValue.text = [destructionValues objectAtIndex:destructionPower];
+}
+
+- (void) displayMotivationLabel {
+    NSUInteger motivation = [self.detailAgent.motivation unsignedIntegerValue];
+    self.motivationValue.text = [motivationValues objectAtIndex:motivation];
+}
+
+
+- (void) displayAssessmentLabel {
+    self.assessment.text = [assessmentValues objectAtIndex:[self.detailAgent.assessment unsignedIntegerValue]];
+}
+
+#pragma mark - Text field delegate methods
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField{
+    BOOL shouldReturn = YES;
+    if (textField == self.nameTextField) {
+        [textField resignFirstResponder];
+        shouldReturn = NO;
+    }
+    return shouldReturn;
 }
 
 @end

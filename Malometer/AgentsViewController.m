@@ -11,7 +11,8 @@
 #import "AgentEditViewController.h"
 #import "Agent.h"
 
-static NSString *segueIdentifier = @"CreateAgent";
+static NSString *segueCreateAgent = @"CreateAgent";
+static NSString *segueEditAgent = @"EditAgent";
 
 @interface AgentsViewController ()
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
@@ -94,25 +95,34 @@ static NSString *segueIdentifier = @"CreateAgent";
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([[segue identifier] isEqualToString:@"showDetail"]) {
-        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        NSManagedObject *object = [[self fetchedResultsController] objectAtIndexPath:indexPath];
-        [[segue destinationViewController] setDetailAgent:object];
+    if ([[segue identifier] isEqualToString:segueEditAgent]) {
+        AgentEditViewController *agentEditVC = (AgentEditViewController *)[segue.destinationViewController topViewController];
+        Agent *agent = [self.fetchedResultsController objectAtIndexPath:[self.tableView indexPathForSelectedRow]];
+        [self prepareAgentEditViewController:agentEditVC withAgent:agent];
+        
     }
-    else if ([[segue identifier] isEqualToString:segueIdentifier]){
-        [self prepareDetailVC:segue];
+    else if ([[segue identifier] isEqualToString:segueCreateAgent]){
+        AgentEditViewController *agentEditVC = (AgentEditViewController *)[segue.destinationViewController topViewController];
+        [self prepareAgentEditViewController:agentEditVC withAgent:nil];
         
     }
 }
 
-- (void)prepareDetailVC:(UIStoryboardSegue *)segue
-{
-    AgentEditViewController *destinationVC = (AgentEditViewController *)[[segue destinationViewController] topViewController];
-    [self.managedObjectContext.undoManager beginUndoGrouping];
 
-    Agent *agent = [NSEntityDescription insertNewObjectForEntityForName:@"Agent" inManagedObjectContext:self.managedObjectContext];
-    [destinationVC setDetailAgent:agent];
-    destinationVC.delegate = self;
+- (void) prepareAgentEditViewController:(AgentEditViewController *)agentEditVC withAgent:(Agent *)agent 
+{
+    NSManagedObjectContext *context = [self.fetchedResultsController managedObjectContext];
+    NSEntityDescription *entity = [[self.fetchedResultsController fetchRequest] entity];
+    [context.undoManager beginUndoGrouping];
+
+    if (agent == nil) {
+        Agent *newAgent = [NSEntityDescription insertNewObjectForEntityForName:@"Agent" inManagedObjectContext:self.managedObjectContext];
+        agentEditVC.detailAgent = newAgent;
+    } else {
+        agentEditVC.detailAgent = agent;
+    }
+    
+    agentEditVC.delegate = self;
 }
 
 
