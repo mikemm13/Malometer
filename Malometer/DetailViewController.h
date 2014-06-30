@@ -7,10 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DetailVCDelegate.h"
 
 @interface DetailViewController : UIViewController
 
 @property (strong, nonatomic) id detailAgent;
+@property (weak, nonatomic) id<DetailVCDelegate> delegate;
 
 @property (weak, nonatomic) IBOutlet UILabel *detailDescriptionLabel;
 @end

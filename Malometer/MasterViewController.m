@@ -10,7 +10,7 @@
 
 #import "DetailViewController.h"
 
-static NSString *segueIdentifier = @"Create Agent";
+static NSString *segueIdentifier = @"CreateAgent";
 
 @interface MasterViewController ()
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
@@ -109,6 +109,7 @@ static NSString *segueIdentifier = @"Create Agent";
     return NO;
 }
 
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([[segue identifier] isEqualToString:@"showDetail"]) {
@@ -117,11 +118,21 @@ static NSString *segueIdentifier = @"Create Agent";
         [[segue destinationViewController] setDetailAgent:object];
     }
     else if ([[segue identifier] isEqualToString:segueIdentifier]){
-        DetailViewController *destinationVC = (DetailViewController *)[[segue destinationViewController] topViewController];
-        NSManagedObject *agent = [NSEntityDescription insertNewObjectForEntityForName:@"Agent" inManagedObjectContext:self.managedObjectContext];
-        [destinationVC setDetailAgent:agent];
+        [self prepareDetailVC:segue];
+        
     }
 }
+
+- (void)prepareDetailVC:(UIStoryboardSegue *)segue
+{
+    DetailViewController *destinationVC = (DetailViewController *)[[segue destinationViewController] topViewController];
+    [self.managedObjectContext.undoManager beginUndoGrouping];
+    self.managedObjectContext.undoManager 
+    NSManagedObject *agent = [NSEntityDescription insertNewObjectForEntityForName:@"Agent" inManagedObjectContext:self.managedObjectContext];
+    [destinationVC setDetailAgent:agent];
+    destinationVC.delegate = self;
+}
+
 
 #pragma mark - Fetched results controller
 
@@ -226,6 +237,15 @@ static NSString *segueIdentifier = @"Create Agent";
 {
     NSManagedObject *object = [self.fetchedResultsController objectAtIndexPath:indexPath];
     cell.textLabel.text = [[object valueForKey:@"name"] description];
+}
+
+#pragma mark - Delegate methods
+- (void)dismissDetailViewController:(DetailViewController *)detailViewController modifiedData:(BOOL)modifiedData{
+    [self.managedObjectContext.undoManager endUndoGrouping];
+    if (modifiedData) {
+        
+    }
+    [detailViewController dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end

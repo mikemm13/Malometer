@@ -61,6 +61,7 @@
 		491AB8121961685E00548C9D /* MalometerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MalometerTests-Info.plist"; sourceTree = "<group>"; };
 		491AB8141961685E00548C9D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		491AB8161961685E00548C9D /* MalometerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MalometerTests.m; sourceTree = "<group>"; };
+		491AB8201961970700548C9D /* DetailVCDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailVCDelegate.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +134,7 @@
 				491AB8021961685E00548C9D /* Images.xcassets */,
 				491AB7F91961685E00548C9D /* Malometer.xcdatamodeld */,
 				491AB7EB1961685E00548C9D /* Supporting Files */,
+				491AB8201961970700548C9D /* DetailVCDelegate.h */,
 			);
 			path = Malometer;
 			sourceTree = "<group>";
