@@ -2,7 +2,7 @@
 //  Agent.h
 //  Malometer
 //
-//  Created by Miguel Martin Nieto on 30/06/14.
+//  Created by Miguel Martin Nieto on 01/07/14.
 //  Copyright (c) 2014 ironhack. All rights reserved.
 //
 
@@ -16,5 +16,6 @@
 @property (nonatomic, retain) NSNumber * destructionPower;
 @property (nonatomic, retain) NSNumber * motivation;
 @property (nonatomic, retain) NSNumber * assessment;
+@property (nonatomic, retain) NSString * pictureURL;
 
 @end
