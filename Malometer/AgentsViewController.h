@@ -11,7 +11,7 @@
 #import <CoreData/CoreData.h>
 #import "DetailVCDelegate.h"
 
-@interface MasterViewController : UITableViewController <NSFetchedResultsControllerDelegate, DetailVCDelegate>
+@interface AgentsViewController : UITableViewController <NSFetchedResultsControllerDelegate, DetailVCDelegate>
 
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;

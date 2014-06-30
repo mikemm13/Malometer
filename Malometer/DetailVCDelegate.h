@@ -8,8 +8,8 @@
 
 #import <Foundation/Foundation.h>
 //#import "DetailViewController.h"
-@class DetailViewController;
+@class AgentEditViewController;
 @protocol DetailVCDelegate <NSObject>
-- (void) dismissDetailViewController:(DetailViewController *)detailViewController modifiedData:(BOOL)modifiedData;
+- (void) dismissDetailViewController:(AgentEditViewController *)detailViewController modifiedData:(BOOL)modifiedData;
 
 @end

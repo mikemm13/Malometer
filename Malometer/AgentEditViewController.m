@@ -6,13 +6,13 @@
 //  Copyright (c) 2014 ironhack. All rights reserved.
 //
 
-#import "DetailViewController.h"
+#import "AgentEditViewController.h"
 
 static NSArray *destructionValues;
 static NSArray *motivationValues;
 static NSArray *assessmentValues;
 
-@interface DetailViewController ()
+@interface AgentEditViewController ()
 
 @property (weak, nonatomic) IBOutlet UITextField *nameTextField;
 @property (weak, nonatomic) IBOutlet UILabel *assessment;
@@ -26,7 +26,7 @@ static NSArray *assessmentValues;
 - (void)configureView;
 @end
 
-@implementation DetailViewController
+@implementation AgentEditViewController
 
 #pragma mark - Managing the detail item
 

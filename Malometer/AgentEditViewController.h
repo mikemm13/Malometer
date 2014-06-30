@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "DetailVCDelegate.h"
 
-@interface DetailViewController : UIViewController
+@interface AgentEditViewController : UIViewController
 
 @property (strong, nonatomic) id detailAgent;
 @property (weak, nonatomic) id<DetailVCDelegate> delegate;
