@@ -10,6 +10,8 @@
 
 #import "DetailViewController.h"
 
+static NSString *segueIdentifier = @"Create Agent";
+
 @interface MasterViewController ()
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
 @end
@@ -26,6 +28,9 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
 //    self.navigationItem.leftBarButtonItem = self.editButtonItem;
+
+   
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -53,6 +58,8 @@
 //        abort();
 //    }
 //}
+
+
 
 #pragma mark - Table View
 
@@ -107,7 +114,12 @@
     if ([[segue identifier] isEqualToString:@"showDetail"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         NSManagedObject *object = [[self fetchedResultsController] objectAtIndexPath:indexPath];
-        [[segue destinationViewController] setDetailItem:object];
+        [[segue destinationViewController] setDetailAgent:object];
+    }
+    else if ([[segue identifier] isEqualToString:segueIdentifier]){
+        DetailViewController *destinationVC = (DetailViewController *)[[segue destinationViewController] topViewController];
+        NSManagedObject *agent = [NSEntityDescription insertNewObjectForEntityForName:@"Agent" inManagedObjectContext:self.managedObjectContext];
+        [destinationVC setDetailAgent:agent];
     }
 }
 

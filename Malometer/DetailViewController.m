@@ -30,10 +30,10 @@ static NSArray *assessmentValues;
 
 #pragma mark - Managing the detail item
 
-- (void)setDetailItem:(id)newDetailItem
+- (void)setDetailAgent:(id)detailAgent
 {
-    if (_detailItem != newDetailItem) {
-        _detailItem = newDetailItem;
+    if (_detailAgent != detailAgent) {
+        _detailAgent = detailAgent;
         
         // Update the view.
         [self configureView];
@@ -56,9 +56,9 @@ static NSArray *assessmentValues;
     motivationValues = @[@"None", @"Bored", @"OK", @"Motivated", @"Very motivated"];
     assessmentValues = @[@"No Way", @"Better Not", @"Maybe", @"Yes", @"A Must"];
     
-    self.assessment = assessmentValues[0];
-    self.destructionPowerValue = destructionValues[0];
-    self.motivationValue = motivationValues[0];
+    self.assessment.text = assessmentValues[0];
+    self.destructionPowerValue.text = destructionValues[0];
+    self.motivationValue.text = motivationValues[0];
     self.motivationStepper.value = 0;
     self.destructionPowerStepper.value = 0;
     
