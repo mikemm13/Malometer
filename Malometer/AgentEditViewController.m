@@ -57,23 +57,25 @@ static NSArray *assessmentValues;
     motivationValues = @[@"None", @"Bored", @"OK", @"Motivated", @"Very motivated"];
     assessmentValues = @[@"No Way", @"Better Not", @"Maybe", @"Yes", @"A Must"];
     
-    self.assessment.text = assessmentValues[0];
+    [self changeAssessment];
     [self changeDestructionPowerValue];
     [self changeMotivationValue];
 
-    self.motivationStepper.value = 0;
-    self.destructionPowerStepper.value = 0;
+//    self.motivationStepper.value = 0;
+//    self.destructionPowerStepper.value = 0;
     
 }
 
 - (void)viewWillAppear:(BOOL)animated{
     [self.detailAgent addObserver:self forKeyPath:@"destructionPower" options:0 context:nil];
     [self.detailAgent addObserver:self forKeyPath:@"motivation" options:0 context:nil];
+    [self.detailAgent addObserver:self forKeyPath:@"assessment" options:0 context:nil];
 }
 
 - (void)viewWillDisappear:(BOOL)animated{
     [self.detailAgent removeObserver:self forKeyPath:@"destructionPower"];
     [self.detailAgent removeObserver:self forKeyPath:@"motivation"];
+    [self.detailAgent removeObserver:self forKeyPath:@"assessment"];
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context{
@@ -81,6 +83,8 @@ static NSArray *assessmentValues;
         [self changeDestructionPowerValue];
     } else if ([keyPath isEqualToString:@"motivation"]){
         [self changeMotivationValue];
+    } else if ([keyPath isEqualToString:@"assessment"]){
+        [self changeAssessment];
     }
         
 }
@@ -103,22 +107,24 @@ static NSArray *assessmentValues;
 - (IBAction)destructionPowerChanged:(id)sender {
     NSNumber *stepperValue = [NSNumber numberWithFloat:self.destructionPowerStepper.value];
     self.detailAgent.destructionPower = stepperValue;
-    NSNumber *returnedStepperValue = self.detailAgent.destructionPower;
-    self.assessment.text = [NSString stringWithFormat:@"Destruction: %f", [returnedStepperValue floatValue]];
+    
+}
+
+- (IBAction)motivationChanged:(id)sender {
+    NSNumber *stepperValue = [NSNumber numberWithFloat:self.motivationStepper.value];
+    self.detailAgent.motivation = stepperValue;
+    
+}
+
+- (void)changeAssessment{
+    NSNumber *assessment = self.detailAgent.assessment;
+    self.assessment.text = [assessmentValues objectAtIndex:[assessment intValue]];
 }
 
 - (void)changeDestructionPowerValue{
     NSNumber *stepperValue = self.detailAgent.destructionPower;
     self.destructionPowerValue.text = destructionValues[[stepperValue intValue]];
     self.destructionPowerStepper.value = [stepperValue floatValue];
-}
-
-- (IBAction)motivationChanged:(id)sender {
-    NSNumber *stepperValue = [NSNumber numberWithFloat:self.motivationStepper.value];
-    self.detailAgent.motivation = stepperValue;
-    NSNumber *returnedStepperValue = self.detailAgent.motivation ;
-    self.assessment.text = [NSString stringWithFormat:@"Motivation: %f", [returnedStepperValue floatValue]];
-    [self changeMotivationValue];
 }
 
 - (void)changeMotivationValue{

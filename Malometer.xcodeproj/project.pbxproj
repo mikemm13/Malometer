@@ -25,7 +25,7 @@
 		491AB80D1961685E00548C9D /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 491AB7E81961685E00548C9D /* CoreData.framework */; };
 		491AB8151961685E00548C9D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 491AB8131961685E00548C9D /* InfoPlist.strings */; };
 		491AB8171961685E00548C9D /* MalometerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 491AB8161961685E00548C9D /* MalometerTests.m */; };
-		491AB8231961B81D00548C9D /* Agent.m in Sources */ = {isa = PBXBuildFile; fileRef = 491AB8221961B81D00548C9D /* Agent.m */; };
+		491AB8261961C2FA00548C9D /* Agent.m in Sources */ = {isa = PBXBuildFile; fileRef = 491AB8251961C2FA00548C9D /* Agent.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,8 +63,8 @@
 		491AB8141961685E00548C9D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		491AB8161961685E00548C9D /* MalometerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MalometerTests.m; sourceTree = "<group>"; };
 		491AB8201961970700548C9D /* DetailVCDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailVCDelegate.h; sourceTree = "<group>"; };
-		491AB8211961B81D00548C9D /* Agent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Agent.h; sourceTree = "<group>"; };
-		491AB8221961B81D00548C9D /* Agent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Agent.m; sourceTree = "<group>"; };
+		491AB8241961C2FA00548C9D /* Agent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Agent.h; sourceTree = "<group>"; };
+		491AB8251961C2FA00548C9D /* Agent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Agent.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,9 +135,9 @@
 				491AB7FF1961685E00548C9D /* AgentEditViewController.h */,
 				491AB8001961685E00548C9D /* AgentEditViewController.m */,
 				491AB8021961685E00548C9D /* Images.xcassets */,
+				491AB8241961C2FA00548C9D /* Agent.h */,
+				491AB8251961C2FA00548C9D /* Agent.m */,
 				491AB7F91961685E00548C9D /* Malometer.xcdatamodeld */,
-				491AB8211961B81D00548C9D /* Agent.h */,
-				491AB8221961B81D00548C9D /* Agent.m */,
 				491AB7EB1961685E00548C9D /* Supporting Files */,
 				491AB8201961970700548C9D /* DetailVCDelegate.h */,
 			);
@@ -273,7 +273,7 @@
 				491AB8011961685E00548C9D /* AgentEditViewController.m in Sources */,
 				491AB7FE1961685E00548C9D /* AgentsViewController.m in Sources */,
 				491AB7F51961685E00548C9D /* AppDelegate.m in Sources */,
-				491AB8231961B81D00548C9D /* Agent.m in Sources */,
+				491AB8261961C2FA00548C9D /* Agent.m in Sources */,
 				491AB7F11961685E00548C9D /* main.m in Sources */,
 				491AB7FB1961685E00548C9D /* Malometer.xcdatamodeld in Sources */,
 			);
