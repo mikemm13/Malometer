@@ -24,9 +24,12 @@
 
 @interface Agent (CoreDataGeneratedAccessors)
 
+
+
 - (void)addDomainsObject:(Domain *)value;
 - (void)removeDomainsObject:(Domain *)value;
 - (void)addDomains:(NSSet *)values;
 - (void)removeDomains:(NSSet *)values;
+
 
 @end

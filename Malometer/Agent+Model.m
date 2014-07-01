@@ -13,7 +13,7 @@ NSString *const agentPropertyDestructionPower = @"destructionPower";
 NSString *const agentPropertyMotivation = @"motivation";
 NSString *const agentPropertyAssessment = @"assessment";
 NSString *const agentPropertyPictureUUID = @"pictureUUID";
-
+NSString *const agentPropertyName = @"name";
 
 
 @implementation Agent (Model)
@@ -87,6 +87,16 @@ NSString *const agentPropertyPictureUUID = @"pictureUUID";
     return fetchRequest;
 
 }
+
++ (NSFetchRequest *)fetchAllAgentsWithSortDescriptors:(NSArray *)sortDescriptors{
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"Agent"];
+    [fetchRequest setFetchBatchSize:20];
+    [fetchRequest setSortDescriptors:sortDescriptors];
+    return fetchRequest;
+    
+    
+}
+
 
 #pragma mark - Picture logic
 

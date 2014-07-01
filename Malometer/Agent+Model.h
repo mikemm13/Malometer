@@ -13,10 +13,12 @@ extern NSString *const agentPropertyDestructionPower;
 extern NSString *const agentPropertyMotivation;
 extern NSString *const agentPropertyAssessment;
 extern NSString *const agentPropertyPictureUUID;
+extern NSString *const agentPropertyName;
 
 @interface Agent (Model)
 + (NSFetchRequest *)fetchAllAgentsByName;
 + (NSFetchRequest *)fetchAllAgentsByNameWithPredicate:(NSPredicate *)predicate;
++ (NSFetchRequest *)fetchAllAgentsWithSortDescriptors:(NSArray *)sortDescriptors;
 - (NSString *) generatePictureUUID;
 
 
