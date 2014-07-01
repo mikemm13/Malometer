@@ -11,6 +11,7 @@
 #import "UIImage+AgentAdjust.h"
 #import "JOFImageMapper.h"
 #import "FreakType.h"
+#import "Domain.h"
 
 typedef NS_ENUM(NSInteger, actionSheetButtons) {
     actionSheetTakePicture = 0, // actionSheet.firstOtherButtonIndex
@@ -193,11 +194,40 @@ static const CGFloat pictureSide = 200.0;
 
 - (void) assignDataToAgent {
     self.agent.name = self.nameTextField.text;
-    FreakType *freakType = [FreakType fetchFreakTypeInMOC:self.agent.managedObjectContext withName:self.categoryTextField.text];
-    if (!freakType) {
-        freakType = [FreakType createFreakTypeInMOC:self.agent.managedObjectContext withName:self.categoryTextField.text];
+    
+    [self assignCategory];
+    [self assignDomains];
+}
+
+
+- (void) assignCategory {
+    NSString *categoryName = self.categoryTextField.text;
+    if (categoryName != nil) {
+        FreakType *freakType = [FreakType fetchFreakTypeInMOC:self.agent.managedObjectContext withName:self.categoryTextField.text];
+        if (freakType == nil) {
+            freakType = [FreakType createFreakTypeInMOC:self.agent.managedObjectContext withName:self.categoryTextField.text];
+        }
+        self.agent.category = freakType;
     }
-    self.agent.category = freakType;
+}
+
+
+- (void) assignDomains {
+    NSString *domainsString = self.domainsTextField.text;
+    if (domainsString != nil) {
+        NSArray *domainNames = [domainsString componentsSeparatedByString:@","];
+        NSMutableSet *domains = [[NSMutableSet alloc] initWithCapacity:[domainNames count]];
+        Domain *domain;
+        for (NSString *domainName in domainNames) {
+            domain = [Domain fetchDomainInMOC:self.agent.managedObjectContext
+                               withName:domainName];
+            if (domain == nil) {
+                domain = [Domain createDomainInMOC:self.agent.managedObjectContext withName:domainName];
+            }
+            [domains addObject:domain];
+        }
+        self.agent.domains = domains;
+    }
 }
 
 

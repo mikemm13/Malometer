@@ -25,7 +25,7 @@
 - (void)removeAgents:(NSSet *)values;
 
 + (instancetype) createDomainInMOC:(NSManagedObjectContext *)managedObjectContext withName:(NSString *)name;
-+ (NSSet *)fetchDomainsInMOC:(NSManagedObjectContext *)managedObjectContext withName:(NSString *)name;
++ (Domain *)fetchDomainInMOC:(NSManagedObjectContext *)managedObjectContext withName:(NSString *)name;
 
 
 @end

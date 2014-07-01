@@ -21,14 +21,14 @@
     return domain;
 }
 
-+ (NSSet *)fetchDomainsInMOC:(NSManagedObjectContext *)managedObjectContext withName:(NSString *)name{
++ (Domain *)fetchDomainInMOC:(NSManagedObjectContext *)managedObjectContext withName:(NSString *)name{
     NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Domain"];
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"%K==%@",@"name",name];
     fetchRequest.predicate = predicate;
     
     NSError *error;
     NSArray *results = [managedObjectContext executeFetchRequest:fetchRequest error:&error];
-    return results;
+    return [results lastObject];
 }
 
 @end
