@@ -2,16 +2,20 @@
 //  Agent+Model.h
 //  Malometer
 //
-//  Created by Miguel Martin Nieto on 01/07/14.
-//  Copyright (c) 2014 ironhack. All rights reserved.
+//  Created by Jorge D. Ortiz Fuentes on 08/06/14.
+//  Copyright (c) 2014 PoWWaU. All rights reserved.
 //
 
 #import "Agent.h"
 
-@interface Agent (Model)
-
+// Strings of the attributes/properties
 extern NSString *const agentPropertyDestructionPower;
 extern NSString *const agentPropertyMotivation;
 extern NSString *const agentPropertyAssessment;
+extern NSString *const agentPropertyPictureUUID;
+
+@interface Agent (Model)
+
+- (NSString *) generatePictureUUID;
 
 @end

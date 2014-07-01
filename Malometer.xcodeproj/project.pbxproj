@@ -7,173 +7,223 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		491AB7E31961685E00548C9D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 491AB7E21961685E00548C9D /* Foundation.framework */; };
-		491AB7E51961685E00548C9D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 491AB7E41961685E00548C9D /* CoreGraphics.framework */; };
-		491AB7E71961685E00548C9D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 491AB7E61961685E00548C9D /* UIKit.framework */; };
-		491AB7E91961685E00548C9D /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 491AB7E81961685E00548C9D /* CoreData.framework */; };
-		491AB7EF1961685E00548C9D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 491AB7ED1961685E00548C9D /* InfoPlist.strings */; };
-		491AB7F11961685E00548C9D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 491AB7F01961685E00548C9D /* main.m */; };
-		491AB7F51961685E00548C9D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 491AB7F41961685E00548C9D /* AppDelegate.m */; };
-		491AB7F81961685E00548C9D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 491AB7F61961685E00548C9D /* Main.storyboard */; };
-		491AB7FB1961685E00548C9D /* Malometer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 491AB7F91961685E00548C9D /* Malometer.xcdatamodeld */; };
-		491AB7FE1961685E00548C9D /* AgentsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 491AB7FD1961685E00548C9D /* AgentsViewController.m */; };
-		491AB8011961685E00548C9D /* AgentEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 491AB8001961685E00548C9D /* AgentEditViewController.m */; };
-		491AB8031961685E00548C9D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 491AB8021961685E00548C9D /* Images.xcassets */; };
-		491AB80A1961685E00548C9D /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 491AB8091961685E00548C9D /* XCTest.framework */; };
-		491AB80B1961685E00548C9D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 491AB7E21961685E00548C9D /* Foundation.framework */; };
-		491AB80C1961685E00548C9D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 491AB7E61961685E00548C9D /* UIKit.framework */; };
-		491AB80D1961685E00548C9D /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 491AB7E81961685E00548C9D /* CoreData.framework */; };
-		491AB8151961685E00548C9D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 491AB8131961685E00548C9D /* InfoPlist.strings */; };
-		491AB8171961685E00548C9D /* MalometerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 491AB8161961685E00548C9D /* MalometerTests.m */; };
-		491AB82919621E2600548C9D /* Agent.m in Sources */ = {isa = PBXBuildFile; fileRef = 491AB82819621E2600548C9D /* Agent.m */; };
-		491AB82C19621E4C00548C9D /* Agent+Model.m in Sources */ = {isa = PBXBuildFile; fileRef = 491AB82B19621E4C00548C9D /* Agent+Model.m */; };
+		CF0375F71949D9FE00D50843 /* UIImage+AgentAdjust.m in Sources */ = {isa = PBXBuildFile; fileRef = CF0375F61949D9FE00D50843 /* UIImage+AgentAdjust.m */; };
+		CF10A5DD194A11D6008DE59E /* Agent.m in Sources */ = {isa = PBXBuildFile; fileRef = CF10A5DC194A11D6008DE59E /* Agent.m */; };
+		CF148BCD194480DE00CA094C /* Agent+Model.m in Sources */ = {isa = PBXBuildFile; fileRef = CF148BCC194480DE00CA094C /* Agent+Model.m */; };
+		CF1EF2EB1949FF7B009D2E99 /* JOFImageMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = CF1EF2EA1949FF7B009D2E99 /* JOFImageMapper.m */; };
+		CF2744D8193BDE160057C795 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF2744D7193BDE160057C795 /* Foundation.framework */; };
+		CF2744DA193BDE160057C795 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF2744D9193BDE160057C795 /* CoreGraphics.framework */; };
+		CF2744DC193BDE160057C795 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF2744DB193BDE160057C795 /* UIKit.framework */; };
+		CF2744DE193BDE160057C795 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF2744DD193BDE160057C795 /* CoreData.framework */; };
+		CF2744E4193BDE160057C795 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CF2744E2193BDE160057C795 /* InfoPlist.strings */; };
+		CF2744E6193BDE160057C795 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CF2744E5193BDE160057C795 /* main.m */; };
+		CF2744EA193BDE160057C795 /* JOFAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CF2744E9193BDE160057C795 /* JOFAppDelegate.m */; };
+		CF2744ED193BDE160057C795 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF2744EB193BDE160057C795 /* Main.storyboard */; };
+		CF2744F0193BDE160057C795 /* Malometer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CF2744EE193BDE160057C795 /* Malometer.xcdatamodeld */; };
+		CF2744F3193BDE160057C795 /* JOFAgentsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF2744F2193BDE160057C795 /* JOFAgentsViewController.m */; };
+		CF2744F6193BDE160057C795 /* JOFAgentEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF2744F5193BDE160057C795 /* JOFAgentEditViewController.m */; };
+		CF2744F8193BDE160057C795 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF2744F7193BDE160057C795 /* Images.xcassets */; };
+		CF2744FF193BDE160057C795 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF2744FE193BDE160057C795 /* XCTest.framework */; };
+		CF274500193BDE160057C795 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF2744D7193BDE160057C795 /* Foundation.framework */; };
+		CF274501193BDE160057C795 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF2744DB193BDE160057C795 /* UIKit.framework */; };
+		CF274502193BDE160057C795 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF2744DD193BDE160057C795 /* CoreData.framework */; };
+		CF27450A193BDE160057C795 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CF274508193BDE160057C795 /* InfoPlist.strings */; };
+		CF27450C193BDE160057C795 /* MalometerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CF27450B193BDE160057C795 /* MalometerTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		491AB80E1961685E00548C9D /* PBXContainerItemProxy */ = {
+		CF274503193BDE160057C795 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 491AB7D71961685E00548C9D /* Project object */;
+			containerPortal = CF2744CC193BDE160057C795 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 491AB7DE1961685E00548C9D;
+			remoteGlobalIDString = CF2744D3193BDE160057C795;
 			remoteInfo = Malometer;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		491AB7DF1961685E00548C9D /* Malometer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Malometer.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		491AB7E21961685E00548C9D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		491AB7E41961685E00548C9D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		491AB7E61961685E00548C9D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		491AB7E81961685E00548C9D /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		491AB7EC1961685E00548C9D /* Malometer-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Malometer-Info.plist"; sourceTree = "<group>"; };
-		491AB7EE1961685E00548C9D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		491AB7F01961685E00548C9D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		491AB7F21961685E00548C9D /* Malometer-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Malometer-Prefix.pch"; sourceTree = "<group>"; };
-		491AB7F31961685E00548C9D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		491AB7F41961685E00548C9D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		491AB7F71961685E00548C9D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		491AB7FA1961685E00548C9D /* Malometer.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Malometer.xcdatamodel; sourceTree = "<group>"; };
-		491AB7FC1961685E00548C9D /* AgentsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AgentsViewController.h; sourceTree = "<group>"; };
-		491AB7FD1961685E00548C9D /* AgentsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AgentsViewController.m; sourceTree = "<group>"; };
-		491AB7FF1961685E00548C9D /* AgentEditViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AgentEditViewController.h; sourceTree = "<group>"; };
-		491AB8001961685E00548C9D /* AgentEditViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AgentEditViewController.m; sourceTree = "<group>"; };
-		491AB8021961685E00548C9D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		491AB8081961685E00548C9D /* MalometerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MalometerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		491AB8091961685E00548C9D /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		491AB8121961685E00548C9D /* MalometerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MalometerTests-Info.plist"; sourceTree = "<group>"; };
-		491AB8141961685E00548C9D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		491AB8161961685E00548C9D /* MalometerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MalometerTests.m; sourceTree = "<group>"; };
-		491AB8201961970700548C9D /* DetailVCDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailVCDelegate.h; sourceTree = "<group>"; };
-		491AB82719621E2600548C9D /* Agent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Agent.h; sourceTree = "<group>"; };
-		491AB82819621E2600548C9D /* Agent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Agent.m; sourceTree = "<group>"; };
-		491AB82A19621E4C00548C9D /* Agent+Model.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Agent+Model.h"; sourceTree = "<group>"; };
-		491AB82B19621E4C00548C9D /* Agent+Model.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Agent+Model.m"; sourceTree = "<group>"; };
+		CF0375F51949D9FE00D50843 /* UIImage+AgentAdjust.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+AgentAdjust.h"; sourceTree = "<group>"; };
+		CF0375F61949D9FE00D50843 /* UIImage+AgentAdjust.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+AgentAdjust.m"; sourceTree = "<group>"; };
+		CF10A5DB194A11D6008DE59E /* Agent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Agent.h; sourceTree = "<group>"; };
+		CF10A5DC194A11D6008DE59E /* Agent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Agent.m; sourceTree = "<group>"; };
+		CF148BCB194480DE00CA094C /* Agent+Model.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Agent+Model.h"; sourceTree = "<group>"; };
+		CF148BCC194480DE00CA094C /* Agent+Model.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Agent+Model.m"; sourceTree = "<group>"; };
+		CF1EF2E91949FF7B009D2E99 /* JOFImageMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JOFImageMapper.h; sourceTree = "<group>"; };
+		CF1EF2EA1949FF7B009D2E99 /* JOFImageMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JOFImageMapper.m; sourceTree = "<group>"; };
+		CF2744D4193BDE160057C795 /* Malometer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Malometer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF2744D7193BDE160057C795 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		CF2744D9193BDE160057C795 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		CF2744DB193BDE160057C795 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		CF2744DD193BDE160057C795 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		CF2744E1193BDE160057C795 /* Malometer-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Malometer-Info.plist"; sourceTree = "<group>"; };
+		CF2744E3193BDE160057C795 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		CF2744E5193BDE160057C795 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		CF2744E7193BDE160057C795 /* Malometer-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Malometer-Prefix.pch"; sourceTree = "<group>"; };
+		CF2744E8193BDE160057C795 /* JOFAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JOFAppDelegate.h; sourceTree = "<group>"; };
+		CF2744E9193BDE160057C795 /* JOFAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JOFAppDelegate.m; sourceTree = "<group>"; };
+		CF2744EC193BDE160057C795 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		CF2744EF193BDE160057C795 /* Malometer.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Malometer.xcdatamodel; sourceTree = "<group>"; };
+		CF2744F1193BDE160057C795 /* JOFAgentsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JOFAgentsViewController.h; sourceTree = "<group>"; };
+		CF2744F2193BDE160057C795 /* JOFAgentsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JOFAgentsViewController.m; sourceTree = "<group>"; };
+		CF2744F4193BDE160057C795 /* JOFAgentEditViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JOFAgentEditViewController.h; sourceTree = "<group>"; };
+		CF2744F5193BDE160057C795 /* JOFAgentEditViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JOFAgentEditViewController.m; sourceTree = "<group>"; };
+		CF2744F7193BDE160057C795 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		CF2744FD193BDE160057C795 /* MalometerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MalometerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF2744FE193BDE160057C795 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		CF274507193BDE160057C795 /* MalometerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MalometerTests-Info.plist"; sourceTree = "<group>"; };
+		CF274509193BDE160057C795 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		CF27450B193BDE160057C795 /* MalometerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MalometerTests.m; sourceTree = "<group>"; };
+		CF4FE4F1193C5C3700E77955 /* JOFAgentEditViewControllerDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JOFAgentEditViewControllerDelegate.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		491AB7DC1961685E00548C9D /* Frameworks */ = {
+		CF2744D1193BDE160057C795 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				491AB7E51961685E00548C9D /* CoreGraphics.framework in Frameworks */,
-				491AB7E91961685E00548C9D /* CoreData.framework in Frameworks */,
-				491AB7E71961685E00548C9D /* UIKit.framework in Frameworks */,
-				491AB7E31961685E00548C9D /* Foundation.framework in Frameworks */,
+				CF2744DA193BDE160057C795 /* CoreGraphics.framework in Frameworks */,
+				CF2744DE193BDE160057C795 /* CoreData.framework in Frameworks */,
+				CF2744DC193BDE160057C795 /* UIKit.framework in Frameworks */,
+				CF2744D8193BDE160057C795 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		491AB8051961685E00548C9D /* Frameworks */ = {
+		CF2744FA193BDE160057C795 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				491AB80A1961685E00548C9D /* XCTest.framework in Frameworks */,
-				491AB80D1961685E00548C9D /* CoreData.framework in Frameworks */,
-				491AB80C1961685E00548C9D /* UIKit.framework in Frameworks */,
-				491AB80B1961685E00548C9D /* Foundation.framework in Frameworks */,
+				CF2744FF193BDE160057C795 /* XCTest.framework in Frameworks */,
+				CF274502193BDE160057C795 /* CoreData.framework in Frameworks */,
+				CF274501193BDE160057C795 /* UIKit.framework in Frameworks */,
+				CF274500193BDE160057C795 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		491AB7D61961685E00548C9D = {
+		CF0375F41949D95200D50843 /* Auxiliary */ = {
 			isa = PBXGroup;
 			children = (
-				491AB7EA1961685E00548C9D /* Malometer */,
-				491AB8101961685E00548C9D /* MalometerTests */,
-				491AB7E11961685E00548C9D /* Frameworks */,
-				491AB7E01961685E00548C9D /* Products */,
+				CF0375F51949D9FE00D50843 /* UIImage+AgentAdjust.h */,
+				CF0375F61949D9FE00D50843 /* UIImage+AgentAdjust.m */,
+				CF1EF2E91949FF7B009D2E99 /* JOFImageMapper.h */,
+				CF1EF2EA1949FF7B009D2E99 /* JOFImageMapper.m */,
+			);
+			name = Auxiliary;
+			sourceTree = "<group>";
+		};
+		CF10A5D7194A0FAA008DE59E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CF2744EE193BDE160057C795 /* Malometer.xcdatamodeld */,
+				CF10A5DB194A11D6008DE59E /* Agent.h */,
+				CF10A5DC194A11D6008DE59E /* Agent.m */,
+				CF148BCB194480DE00CA094C /* Agent+Model.h */,
+				CF148BCC194480DE00CA094C /* Agent+Model.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		CF10A5D8194A0FC8008DE59E /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				CF2744E8193BDE160057C795 /* JOFAppDelegate.h */,
+				CF2744E9193BDE160057C795 /* JOFAppDelegate.m */,
+				CF2744F1193BDE160057C795 /* JOFAgentsViewController.h */,
+				CF2744F2193BDE160057C795 /* JOFAgentsViewController.m */,
+				CF2744F4193BDE160057C795 /* JOFAgentEditViewController.h */,
+				CF2744F5193BDE160057C795 /* JOFAgentEditViewController.m */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		CF10A5D9194A0FE7008DE59E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CF2744EB193BDE160057C795 /* Main.storyboard */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		CF10A5DA194A1006008DE59E /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				CF4FE4F1193C5C3700E77955 /* JOFAgentEditViewControllerDelegate.h */,
+			);
+			name = Protocols;
+			sourceTree = "<group>";
+		};
+		CF2744CB193BDE160057C795 = {
+			isa = PBXGroup;
+			children = (
+				CF2744DF193BDE160057C795 /* Malometer */,
+				CF274505193BDE160057C795 /* MalometerTests */,
+				CF2744D6193BDE160057C795 /* Frameworks */,
+				CF2744D5193BDE160057C795 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		491AB7E01961685E00548C9D /* Products */ = {
+		CF2744D5193BDE160057C795 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				491AB7DF1961685E00548C9D /* Malometer.app */,
-				491AB8081961685E00548C9D /* MalometerTests.xctest */,
+				CF2744D4193BDE160057C795 /* Malometer.app */,
+				CF2744FD193BDE160057C795 /* MalometerTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		491AB7E11961685E00548C9D /* Frameworks */ = {
+		CF2744D6193BDE160057C795 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				491AB7E21961685E00548C9D /* Foundation.framework */,
-				491AB7E41961685E00548C9D /* CoreGraphics.framework */,
-				491AB7E61961685E00548C9D /* UIKit.framework */,
-				491AB7E81961685E00548C9D /* CoreData.framework */,
-				491AB8091961685E00548C9D /* XCTest.framework */,
+				CF2744D7193BDE160057C795 /* Foundation.framework */,
+				CF2744D9193BDE160057C795 /* CoreGraphics.framework */,
+				CF2744DB193BDE160057C795 /* UIKit.framework */,
+				CF2744DD193BDE160057C795 /* CoreData.framework */,
+				CF2744FE193BDE160057C795 /* XCTest.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		491AB7EA1961685E00548C9D /* Malometer */ = {
+		CF2744DF193BDE160057C795 /* Malometer */ = {
 			isa = PBXGroup;
 			children = (
-				491AB7F31961685E00548C9D /* AppDelegate.h */,
-				491AB7F41961685E00548C9D /* AppDelegate.m */,
-				491AB7F61961685E00548C9D /* Main.storyboard */,
-				491AB7FC1961685E00548C9D /* AgentsViewController.h */,
-				491AB7FD1961685E00548C9D /* AgentsViewController.m */,
-				491AB7FF1961685E00548C9D /* AgentEditViewController.h */,
-				491AB8001961685E00548C9D /* AgentEditViewController.m */,
-				491AB8021961685E00548C9D /* Images.xcassets */,
-				491AB7F91961685E00548C9D /* Malometer.xcdatamodeld */,
-				491AB82719621E2600548C9D /* Agent.h */,
-				491AB82819621E2600548C9D /* Agent.m */,
-				491AB82A19621E4C00548C9D /* Agent+Model.h */,
-				491AB82B19621E4C00548C9D /* Agent+Model.m */,
-				491AB7EB1961685E00548C9D /* Supporting Files */,
-				491AB8201961970700548C9D /* DetailVCDelegate.h */,
+				CF10A5D7194A0FAA008DE59E /* Model */,
+				CF10A5D8194A0FC8008DE59E /* View Controllers */,
+				CF10A5D9194A0FE7008DE59E /* View */,
+				CF10A5DA194A1006008DE59E /* Protocols */,
+				CF0375F41949D95200D50843 /* Auxiliary */,
+				CF2744F7193BDE160057C795 /* Images.xcassets */,
+				CF2744E0193BDE160057C795 /* Supporting Files */,
 			);
 			path = Malometer;
 			sourceTree = "<group>";
 		};
-		491AB7EB1961685E00548C9D /* Supporting Files */ = {
+		CF2744E0193BDE160057C795 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				491AB7EC1961685E00548C9D /* Malometer-Info.plist */,
-				491AB7ED1961685E00548C9D /* InfoPlist.strings */,
-				491AB7F01961685E00548C9D /* main.m */,
-				491AB7F21961685E00548C9D /* Malometer-Prefix.pch */,
+				CF2744E1193BDE160057C795 /* Malometer-Info.plist */,
+				CF2744E2193BDE160057C795 /* InfoPlist.strings */,
+				CF2744E5193BDE160057C795 /* main.m */,
+				CF2744E7193BDE160057C795 /* Malometer-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		491AB8101961685E00548C9D /* MalometerTests */ = {
+		CF274505193BDE160057C795 /* MalometerTests */ = {
 			isa = PBXGroup;
 			children = (
-				491AB8161961685E00548C9D /* MalometerTests.m */,
-				491AB8111961685E00548C9D /* Supporting Files */,
+				CF27450B193BDE160057C795 /* MalometerTests.m */,
+				CF274506193BDE160057C795 /* Supporting Files */,
 			);
 			path = MalometerTests;
 			sourceTree = "<group>";
 		};
-		491AB8111961685E00548C9D /* Supporting Files */ = {
+		CF274506193BDE160057C795 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				491AB8121961685E00548C9D /* MalometerTests-Info.plist */,
-				491AB8131961685E00548C9D /* InfoPlist.strings */,
+				CF274507193BDE160057C795 /* MalometerTests-Info.plist */,
+				CF274508193BDE160057C795 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -181,13 +231,13 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		491AB7DE1961685E00548C9D /* Malometer */ = {
+		CF2744D3193BDE160057C795 /* Malometer */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 491AB81A1961685E00548C9D /* Build configuration list for PBXNativeTarget "Malometer" */;
+			buildConfigurationList = CF27450F193BDE160057C795 /* Build configuration list for PBXNativeTarget "Malometer" */;
 			buildPhases = (
-				491AB7DB1961685E00548C9D /* Sources */,
-				491AB7DC1961685E00548C9D /* Frameworks */,
-				491AB7DD1961685E00548C9D /* Resources */,
+				CF2744D0193BDE160057C795 /* Sources */,
+				CF2744D1193BDE160057C795 /* Frameworks */,
+				CF2744D2193BDE160057C795 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -195,42 +245,43 @@
 			);
 			name = Malometer;
 			productName = Malometer;
-			productReference = 491AB7DF1961685E00548C9D /* Malometer.app */;
+			productReference = CF2744D4193BDE160057C795 /* Malometer.app */;
 			productType = "com.apple.product-type.application";
 		};
-		491AB8071961685E00548C9D /* MalometerTests */ = {
+		CF2744FC193BDE160057C795 /* MalometerTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 491AB81D1961685E00548C9D /* Build configuration list for PBXNativeTarget "MalometerTests" */;
+			buildConfigurationList = CF274512193BDE160057C795 /* Build configuration list for PBXNativeTarget "MalometerTests" */;
 			buildPhases = (
-				491AB8041961685E00548C9D /* Sources */,
-				491AB8051961685E00548C9D /* Frameworks */,
-				491AB8061961685E00548C9D /* Resources */,
+				CF2744F9193BDE160057C795 /* Sources */,
+				CF2744FA193BDE160057C795 /* Frameworks */,
+				CF2744FB193BDE160057C795 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				491AB80F1961685E00548C9D /* PBXTargetDependency */,
+				CF274504193BDE160057C795 /* PBXTargetDependency */,
 			);
 			name = MalometerTests;
 			productName = MalometerTests;
-			productReference = 491AB8081961685E00548C9D /* MalometerTests.xctest */;
+			productReference = CF2744FD193BDE160057C795 /* MalometerTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		491AB7D71961685E00548C9D /* Project object */ = {
+		CF2744CC193BDE160057C795 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = JOF;
 				LastUpgradeCheck = 0510;
-				ORGANIZATIONNAME = ironhack;
+				ORGANIZATIONNAME = PoWWaU;
 				TargetAttributes = {
-					491AB8071961685E00548C9D = {
-						TestTargetID = 491AB7DE1961685E00548C9D;
+					CF2744FC193BDE160057C795 = {
+						TestTargetID = CF2744D3193BDE160057C795;
 					};
 				};
 			};
-			buildConfigurationList = 491AB7DA1961685E00548C9D /* Build configuration list for PBXProject "Malometer" */;
+			buildConfigurationList = CF2744CF193BDE160057C795 /* Build configuration list for PBXProject "Malometer" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -238,92 +289,94 @@
 				en,
 				Base,
 			);
-			mainGroup = 491AB7D61961685E00548C9D;
-			productRefGroup = 491AB7E01961685E00548C9D /* Products */;
+			mainGroup = CF2744CB193BDE160057C795;
+			productRefGroup = CF2744D5193BDE160057C795 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				491AB7DE1961685E00548C9D /* Malometer */,
-				491AB8071961685E00548C9D /* MalometerTests */,
+				CF2744D3193BDE160057C795 /* Malometer */,
+				CF2744FC193BDE160057C795 /* MalometerTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		491AB7DD1961685E00548C9D /* Resources */ = {
+		CF2744D2193BDE160057C795 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				491AB8031961685E00548C9D /* Images.xcassets in Resources */,
-				491AB7EF1961685E00548C9D /* InfoPlist.strings in Resources */,
-				491AB7F81961685E00548C9D /* Main.storyboard in Resources */,
+				CF2744F8193BDE160057C795 /* Images.xcassets in Resources */,
+				CF2744E4193BDE160057C795 /* InfoPlist.strings in Resources */,
+				CF2744ED193BDE160057C795 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		491AB8061961685E00548C9D /* Resources */ = {
+		CF2744FB193BDE160057C795 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				491AB8151961685E00548C9D /* InfoPlist.strings in Resources */,
+				CF27450A193BDE160057C795 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		491AB7DB1961685E00548C9D /* Sources */ = {
+		CF2744D0193BDE160057C795 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				491AB8011961685E00548C9D /* AgentEditViewController.m in Sources */,
-				491AB7FE1961685E00548C9D /* AgentsViewController.m in Sources */,
-				491AB82C19621E4C00548C9D /* Agent+Model.m in Sources */,
-				491AB7F51961685E00548C9D /* AppDelegate.m in Sources */,
-				491AB82919621E2600548C9D /* Agent.m in Sources */,
-				491AB7F11961685E00548C9D /* main.m in Sources */,
-				491AB7FB1961685E00548C9D /* Malometer.xcdatamodeld in Sources */,
+				CF10A5DD194A11D6008DE59E /* Agent.m in Sources */,
+				CF2744EA193BDE160057C795 /* JOFAppDelegate.m in Sources */,
+				CF2744E6193BDE160057C795 /* main.m in Sources */,
+				CF148BCD194480DE00CA094C /* Agent+Model.m in Sources */,
+				CF2744F3193BDE160057C795 /* JOFAgentsViewController.m in Sources */,
+				CF2744F0193BDE160057C795 /* Malometer.xcdatamodeld in Sources */,
+				CF1EF2EB1949FF7B009D2E99 /* JOFImageMapper.m in Sources */,
+				CF0375F71949D9FE00D50843 /* UIImage+AgentAdjust.m in Sources */,
+				CF2744F6193BDE160057C795 /* JOFAgentEditViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		491AB8041961685E00548C9D /* Sources */ = {
+		CF2744F9193BDE160057C795 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				491AB8171961685E00548C9D /* MalometerTests.m in Sources */,
+				CF27450C193BDE160057C795 /* MalometerTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		491AB80F1961685E00548C9D /* PBXTargetDependency */ = {
+		CF274504193BDE160057C795 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 491AB7DE1961685E00548C9D /* Malometer */;
-			targetProxy = 491AB80E1961685E00548C9D /* PBXContainerItemProxy */;
+			target = CF2744D3193BDE160057C795 /* Malometer */;
+			targetProxy = CF274503193BDE160057C795 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		491AB7ED1961685E00548C9D /* InfoPlist.strings */ = {
+		CF2744E2193BDE160057C795 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				491AB7EE1961685E00548C9D /* en */,
+				CF2744E3193BDE160057C795 /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		491AB7F61961685E00548C9D /* Main.storyboard */ = {
+		CF2744EB193BDE160057C795 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				491AB7F71961685E00548C9D /* Base */,
+				CF2744EC193BDE160057C795 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		491AB8131961685E00548C9D /* InfoPlist.strings */ = {
+		CF274508193BDE160057C795 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				491AB8141961685E00548C9D /* en */,
+				CF274509193BDE160057C795 /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -331,7 +384,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		491AB8181961685E00548C9D /* Debug */ = {
+		CF27450D193BDE160057C795 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -369,7 +422,7 @@
 			};
 			name = Debug;
 		};
-		491AB8191961685E00548C9D /* Release */ = {
+		CF27450E193BDE160057C795 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -401,7 +454,7 @@
 			};
 			name = Release;
 		};
-		491AB81B1961685E00548C9D /* Debug */ = {
+		CF274510193BDE160057C795 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -414,7 +467,7 @@
 			};
 			name = Debug;
 		};
-		491AB81C1961685E00548C9D /* Release */ = {
+		CF274511193BDE160057C795 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -427,7 +480,7 @@
 			};
 			name = Release;
 		};
-		491AB81E1961685E00548C9D /* Debug */ = {
+		CF274513193BDE160057C795 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Malometer.app/Malometer";
@@ -449,7 +502,7 @@
 			};
 			name = Debug;
 		};
-		491AB81F1961685E00548C9D /* Release */ = {
+		CF274514193BDE160057C795 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Malometer.app/Malometer";
@@ -470,45 +523,47 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		491AB7DA1961685E00548C9D /* Build configuration list for PBXProject "Malometer" */ = {
+		CF2744CF193BDE160057C795 /* Build configuration list for PBXProject "Malometer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				491AB8181961685E00548C9D /* Debug */,
-				491AB8191961685E00548C9D /* Release */,
+				CF27450D193BDE160057C795 /* Debug */,
+				CF27450E193BDE160057C795 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		491AB81A1961685E00548C9D /* Build configuration list for PBXNativeTarget "Malometer" */ = {
+		CF27450F193BDE160057C795 /* Build configuration list for PBXNativeTarget "Malometer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				491AB81B1961685E00548C9D /* Debug */,
-				491AB81C1961685E00548C9D /* Release */,
+				CF274510193BDE160057C795 /* Debug */,
+				CF274511193BDE160057C795 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
-		491AB81D1961685E00548C9D /* Build configuration list for PBXNativeTarget "MalometerTests" */ = {
+		CF274512193BDE160057C795 /* Build configuration list for PBXNativeTarget "MalometerTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				491AB81E1961685E00548C9D /* Debug */,
-				491AB81F1961685E00548C9D /* Release */,
+				CF274513193BDE160057C795 /* Debug */,
+				CF274514193BDE160057C795 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		491AB7F91961685E00548C9D /* Malometer.xcdatamodeld */ = {
+		CF2744EE193BDE160057C795 /* Malometer.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				491AB7FA1961685E00548C9D /* Malometer.xcdatamodel */,
+				CF2744EF193BDE160057C795 /* Malometer.xcdatamodel */,
 			);
-			currentVersion = 491AB7FA1961685E00548C9D /* Malometer.xcdatamodel */;
+			currentVersion = CF2744EF193BDE160057C795 /* Malometer.xcdatamodel */;
 			path = Malometer.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
 /* End XCVersionGroup section */
 	};
-	rootObject = 491AB7D71961685E00548C9D /* Project object */;
+	rootObject = CF2744CC193BDE160057C795 /* Project object */;
 }

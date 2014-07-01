@@ -2,26 +2,35 @@
 //  Agent+Model.m
 //  Malometer
 //
-//  Created by Miguel Martin Nieto on 01/07/14.
-//  Copyright (c) 2014 ironhack. All rights reserved.
+//  Created by Jorge D. Ortiz Fuentes on 08/06/14.
+//  Copyright (c) 2014 PoWWaU. All rights reserved.
 //
 
 #import "Agent+Model.h"
+
+// Strings of the attributes/properties
 NSString *const agentPropertyDestructionPower = @"destructionPower";
 NSString *const agentPropertyMotivation = @"motivation";
 NSString *const agentPropertyAssessment = @"assessment";
+NSString *const agentPropertyPictureUUID = @"pictureUUID";
+
+
 
 @implementation Agent (Model)
 
-- (NSNumber *)assessment{
-    
-    [self willChangeValueForKey:@"assessment"];
-    NSUInteger destroyPower = [self.destructionPower unsignedIntegerValue];
-    NSUInteger motivation = [self.motivation unsignedIntegerValue];
-    NSUInteger assessment = (destroyPower + motivation) / 2;
-    return @(assessment);
-    [self didChangeValueForKey:@"assessment"];
+#pragma mark - Model logic
+
+- (NSNumber *) assessment {
+    NSNumber *assessmentValue;
+    if ([self primitiveValueForKey:agentPropertyAssessment] == nil) {
+        [self updateAssessmentValue];
+    }
+    [self willAccessValueForKey:agentPropertyAssessment];
+    assessmentValue = [self primitiveValueForKey:agentPropertyAssessment];
+    [self didAccessValueForKey:agentPropertyAssessment];
+    return assessmentValue;
 }
+
 
 - (void) setDestructionPower:(NSNumber *)destructionPower {
     [self willChangeValueForKey:agentPropertyDestructionPower];
@@ -38,6 +47,7 @@ NSString *const agentPropertyAssessment = @"assessment";
     [self updateAssessmentValue];
 }
 
+
 - (void) updateAssessmentValue {
     [self willChangeValueForKey:agentPropertyAssessment];
     NSUInteger destroyPower = [self.destructionPower unsignedIntegerValue];
@@ -48,5 +58,15 @@ NSString *const agentPropertyAssessment = @"assessment";
     
 }
 
+#pragma mark - Picture logic
+
+- (NSString *) generatePictureUUID {
+    CFUUIDRef     fileUUID;
+    CFStringRef   fileUUIDString;
+    fileUUID = CFUUIDCreate(kCFAllocatorDefault);
+    fileUUIDString = CFUUIDCreateString(kCFAllocatorDefault, fileUUID);
+    CFRelease(fileUUID);
+    return (__bridge_transfer NSString *)fileUUIDString;
+}
 
 @end

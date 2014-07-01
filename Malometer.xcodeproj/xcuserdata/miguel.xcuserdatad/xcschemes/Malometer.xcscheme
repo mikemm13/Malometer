@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "491AB7DE1961685E00548C9D"
+               BlueprintIdentifier = "CF2744D3193BDE160057C795"
                BuildableName = "Malometer.app"
                BlueprintName = "Malometer"
                ReferencedContainer = "container:Malometer.xcodeproj">
@@ -32,7 +32,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "491AB8071961685E00548C9D"
+               BlueprintIdentifier = "CF2744FC193BDE160057C795"
                BuildableName = "MalometerTests.xctest"
                BlueprintName = "MalometerTests"
                ReferencedContainer = "container:Malometer.xcodeproj">
@@ -42,7 +42,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "491AB7DE1961685E00548C9D"
+            BlueprintIdentifier = "CF2744D3193BDE160057C795"
             BuildableName = "Malometer.app"
             BlueprintName = "Malometer"
             ReferencedContainer = "container:Malometer.xcodeproj">
@@ -61,7 +61,7 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "491AB7DE1961685E00548C9D"
+            BlueprintIdentifier = "CF2744D3193BDE160057C795"
             BuildableName = "Malometer.app"
             BlueprintName = "Malometer"
             ReferencedContainer = "container:Malometer.xcodeproj">
@@ -79,7 +79,7 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "491AB7DE1961685E00548C9D"
+            BlueprintIdentifier = "CF2744D3193BDE160057C795"
             BuildableName = "Malometer.app"
             BlueprintName = "Malometer"
             ReferencedContainer = "container:Malometer.xcodeproj">

@@ -2,17 +2,17 @@
 //  main.m
 //  Malometer
 //
-//  Created by Miguel Martin Nieto on 30/06/14.
-//  Copyright (c) 2014 ironhack. All rights reserved.
+//  Created by Jorge D. Ortiz Fuentes on 02/06/14.
+//  Copyright (c) 2014 PoWWaU. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-#import "AppDelegate.h"
+#import "JOFAppDelegate.h"
 
 int main(int argc, char * argv[])
 {
     @autoreleasepool {
-        return UIApplicationMain(argc, argv, nil, NSStringFromClass([AppDelegate class]));
+        return UIApplicationMain(argc, argv, nil, NSStringFromClass([JOFAppDelegate class]));
     }
 }

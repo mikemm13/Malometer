@@ -2,8 +2,8 @@
 //  Agent.m
 //  Malometer
 //
-//  Created by Miguel Martin Nieto on 01/07/14.
-//  Copyright (c) 2014 ironhack. All rights reserved.
+//  Created by Jorge D. Ortiz Fuentes on 12/06/14.
+//  Copyright (c) 2014 PoWWaU. All rights reserved.
 //
 
 #import "Agent.h"
@@ -11,10 +11,10 @@
 
 @implementation Agent
 
-@dynamic name;
+@dynamic assessment;
 @dynamic destructionPower;
 @dynamic motivation;
-@dynamic assessment;
-@dynamic pictureURL;
+@dynamic name;
+@dynamic pictureUUID;
 
 @end
