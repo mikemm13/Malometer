@@ -58,6 +58,36 @@ NSString *const agentPropertyPictureUUID = @"pictureUUID";
     
 }
 
++ (NSFetchRequest *)fetchAllAgentsByName{
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"Agent"];
+    
+    // Set the batch size to a suitable number.
+    [fetchRequest setFetchBatchSize:20];
+    
+    // Edit the sort key as appropriate.
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:NO];
+    NSArray *sortDescriptors = @[sortDescriptor];
+    
+    [fetchRequest setSortDescriptors:sortDescriptors];
+    return fetchRequest;
+}
+
++ (NSFetchRequest *)fetchAllAgentsByNameWithPredicate:(NSPredicate *)predicate{
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"Agent"];
+    
+    // Set the batch size to a suitable number.
+    [fetchRequest setFetchBatchSize:20];
+    
+    // Edit the sort key as appropriate.
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:NO];
+    NSArray *sortDescriptors = @[sortDescriptor];
+    
+    [fetchRequest setSortDescriptors:sortDescriptors];
+    fetchRequest.predicate = predicate;
+    return fetchRequest;
+
+}
+
 #pragma mark - Picture logic
 
 - (NSString *) generatePictureUUID {
