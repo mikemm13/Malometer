@@ -60,6 +60,7 @@ static const CGFloat pictureSide = 200.0;
     [self initializeMotivationViews];
     [self initializePictureView];
     [self initializeCategoryTextField];
+//    [self initializeDomainsTextField];
 }
 
 

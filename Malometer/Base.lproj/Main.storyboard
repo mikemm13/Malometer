@@ -177,7 +177,7 @@
                         <outlet property="categoryTextField" destination="tV8-wz-Es9" id="hgC-jY-H7R"/>
                         <outlet property="destroyPowerLabel" destination="6dJ-LA-LTU" id="eQ9-xA-eYb"/>
                         <outlet property="destroyPowerStepper" destination="6VR-tv-S0E" id="wgT-gk-CbW"/>
-                        <outlet property="domainTextField" destination="Dtj-t7-DYC" id="JOf-pD-wyo"/>
+                        <outlet property="domainsTextField" destination="Dtj-t7-DYC" id="ghl-dA-NXV"/>
                         <outlet property="imageButton" destination="xhh-VQ-ON8" id="HoD-rW-yFT"/>
                         <outlet property="motivationLabel" destination="uFX-hW-817" id="8q7-Jt-Kwg"/>
                         <outlet property="motivationStepper" destination="CgA-eX-PUQ" id="wpL-oQ-ME7"/>
