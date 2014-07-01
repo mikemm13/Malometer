@@ -31,4 +31,9 @@
     return [results lastObject];
 }
 
++ (NSFetchRequest *) fetchRequestControlledDomains {
+    NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Domain"];
+    fetchRequest.predicate = [NSPredicate predicateWithFormat:@"(SUBQUERY(agents,$x,$x.destructionPower >= 3)).@count > 1"];
+    return fetchRequest;
+}
 @end

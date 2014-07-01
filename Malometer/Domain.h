@@ -26,6 +26,6 @@
 
 + (instancetype) createDomainInMOC:(NSManagedObjectContext *)managedObjectContext withName:(NSString *)name;
 + (Domain *)fetchDomainInMOC:(NSManagedObjectContext *)managedObjectContext withName:(NSString *)name;
-
++ (NSFetchRequest *) fetchRequestControlledDomains;
 
 @end

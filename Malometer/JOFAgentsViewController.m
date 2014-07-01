@@ -10,6 +10,7 @@
 #import "JOFAgentEditViewController.h"
 #import "Agent.h"
 #import "Agent+Model.h"
+#import "Domain.h"
 
 
 @interface JOFAgentsViewController ()
@@ -32,8 +33,16 @@ static NSString *const segueEditAgent   = @"EditAgent";
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
 //    self.navigationItem.leftBarButtonItem = self.editButtonItem;
+     [self displayControlledDomainsInTitle];
 }
 
+#pragma mark - Display information
+
+- (void) displayControlledDomainsInTitle {
+    NSError *error;
+    NSUInteger controlledDomains = [self.managedObjectContext countForFetchRequest:[Domain fetchRequestControlledDomains] error:&error];
+    self.title = [NSString stringWithFormat:@"Controlled domains: %d", controlledDomains];
+}
 
 #pragma mark - Table View
 
@@ -46,6 +55,12 @@ static NSString *const segueEditAgent   = @"EditAgent";
 {
     id <NSFetchedResultsSectionInfo> sectionInfo = [self.fetchedResultsController sections][section];
     return [sectionInfo numberOfObjects];
+}
+
+- (NSString *) tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    NSString *categoryName = [[[self.fetchedResultsController sections] objectAtIndex:section] name];
+    NSNumber *dpAvg = [[[[self.fetchedResultsController sections] objectAtIndex:section] objects] valueForKeyPath:@"@avg.destructionPower"];
+    return [NSString stringWithFormat:@"%@ (%@)", categoryName, dpAvg];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -195,17 +210,9 @@ static NSString *const segueEditAgent   = @"EditAgent";
 - (void)controllerDidChangeContent:(NSFetchedResultsController *)controller
 {
     [self.tableView endUpdates];
+    [self displayControlledDomainsInTitle];
 }
 
-/*
-// Implementing the above methods to update the table view in response to individual changes may have performance implications if a large number of changes are made simultaneously. If this proves to be an issue, you can instead just implement controllerDidChangeContent: which notifies the delegate that all section and object changes have been processed. 
- 
- - (void)controllerDidChangeContent:(NSFetchedResultsController *)controller
-{
-    // In the simplest, most efficient, case, reload the table view.
-    [self.tableView reloadData];
-}
- */
 
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
 {
