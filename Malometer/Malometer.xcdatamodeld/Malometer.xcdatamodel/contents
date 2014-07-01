@@ -7,7 +7,7 @@
         <attribute name="name" attributeType="String" indexed="YES" syncable="YES"/>
         <attribute name="pictureUUID" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="category" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="FreakType" inverseName="agents" inverseEntity="FreakType" syncable="YES"/>
-        <relationship name="domains" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Domain" inverseName="agents" inverseEntity="Domain" syncable="YES"/>
+        <relationship name="domains" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Domain" inverseName="agents" inverseEntity="Domain" syncable="YES"/>
         <userInfo/>
     </entity>
     <entity name="Domain" representedClassName="Domain" syncable="YES">

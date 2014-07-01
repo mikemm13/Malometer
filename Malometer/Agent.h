@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
+@class Domain, FreakType;
 
 @interface Agent : NSManagedObject
 
@@ -17,7 +18,15 @@
 @property (nonatomic, retain) NSNumber * motivation;
 @property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) NSString * pictureUUID;
-@property (nonatomic, retain) NSManagedObject *category;
-@property (nonatomic, retain) NSManagedObject *domains;
+@property (nonatomic, retain) FreakType *category;
+@property (nonatomic, retain) NSSet *domains;
+@end
+
+@interface Agent (CoreDataGeneratedAccessors)
+
+- (void)addDomainsObject:(Domain *)value;
+- (void)removeDomainsObject:(Domain *)value;
+- (void)addDomains:(NSSet *)values;
+- (void)removeDomains:(NSSet *)values;
 
 @end
