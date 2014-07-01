@@ -60,7 +60,7 @@ static const CGFloat pictureSide = 200.0;
     [self initializeMotivationViews];
     [self initializePictureView];
     [self initializeCategoryTextField];
-//    [self initializeDomainsTextField];
+    [self initializeDomainsTextField];
 }
 
 
@@ -140,13 +140,13 @@ static const CGFloat pictureSide = 200.0;
 - (void) initializeCategoryTextField {
     if (self.agent.category != nil) {
         // if it is read from the data, it exists.
-        [self decorateTextField:self.categoryTextField withContents:@[self.agent.category] values:@[@(YES)]];
+        [self decorateTextField:self.categoryTextField withContents:@[self.agent.category.name] values:@[@(YES)]];
     }
 }
 
 - (void) initializeDomainsTextField {
     if ([self.agent.domains count] > 0) {
-        NSArray *contents = [self.agent.domains valueForKey:@"name"];
+        NSArray *contents = [[self.agent.domains valueForKey:@"name"] allObjects];
         NSMutableArray *values = [[NSMutableArray alloc] initWithCapacity:[contents count]];
         for (NSUInteger i = 0; i < [contents count]; i++) {
             [values addObject:@(YES)];
@@ -185,12 +185,19 @@ static const CGFloat pictureSide = 200.0;
 - (IBAction) save:(id)sender {
     [self assignDataToAgent];
     [self persistImageChanges];
+    
+    
     [self.delegate dismissAgentEditViewController:self modifiedData:YES];
 }
 
 
 - (void) assignDataToAgent {
     self.agent.name = self.nameTextField.text;
+    FreakType *freakType = [FreakType fetchFreakTypeInMOC:self.agent.managedObjectContext withName:self.categoryTextField.text];
+    if (!freakType) {
+        freakType = [FreakType createFreakTypeInMOC:self.agent.managedObjectContext withName:self.categoryTextField.text];
+    }
+    self.agent.category = freakType;
 }
 
 
