@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>F75A673C-E129-4BE9-8665-3F166A230834</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Malometer</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>5621D04D-3F90-48E0-AE79-31DA2A1F5E77</key>
+		<string>https://github.com/mikemm13/Malometer.git</string>
+		<key>A18CF1E7-6958-44F4-B69E-E5B45FD84756</key>
+		<string>https://github.com/jdortiz/Malometer.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Malometer.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>5621D04D-3F90-48E0-AE79-31DA2A1F5E77</key>
+		<string>../..</string>
+		<key>A18CF1E7-6958-44F4-B69E-E5B45FD84756</key>
+		<string>../../Malometer</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/mikemm13/Malometer.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>5621D04D-3F90-48E0-AE79-31DA2A1F5E77</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>5621D04D-3F90-48E0-AE79-31DA2A1F5E77</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Malometer</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>A18CF1E7-6958-44F4-B69E-E5B45FD84756</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Malometer</string>
+		</dict>
+	</array>
+</dict>
+</plist>
