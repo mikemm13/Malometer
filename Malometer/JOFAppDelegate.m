@@ -120,7 +120,7 @@
     
     NSError *error = nil;
     _persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];
-    if (![_persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:nil error:&error]) {
+    if (![_persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:@{NSMigratePersistentStoresAutomaticallyOption:@YES, NSInferMappingModelAutomaticallyOption:@YES} error:&error]) {
         /*
          Replace this implementation with code to handle the error appropriately.
          
@@ -137,13 +137,14 @@
          If you encounter schema incompatibility errors during development, you can reduce their frequency by:
          * Simply deleting the existing store:
          [[NSFileManager defaultManager] removeItemAtURL:storeURL error:nil]
-         
-         * Performing automatic lightweight migration by passing the following dictionary as the options parameter:
+         */
+         /* Performing automatic lightweight migration by passing the following dictionary as the options parameter:
          @{NSMigratePersistentStoresAutomaticallyOption:@YES, NSInferMappingModelAutomaticallyOption:@YES}
          
          Lightweight migration will only work for a limited set of schema changes; consult "Core Data Model Versioning and Data Migration Programming Guide" for details.
          
          */
+        
         NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
         abort();
     }    
