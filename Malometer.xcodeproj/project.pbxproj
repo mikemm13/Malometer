@@ -54,6 +54,7 @@
 		4997C3891962C9830067DED0 /* Domain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Domain.m; sourceTree = "<group>"; };
 		4997C38B1962F5420067DED0 /* JOFAppDelegateTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JOFAppDelegateTests.m; sourceTree = "<group>"; };
 		4997C38D19630F550067DED0 /* AgentTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AgentTests.m; sourceTree = "<group>"; };
+		49D76DB51964632B00E21BF7 /* Malometer 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Malometer 2.xcdatamodel"; sourceTree = "<group>"; };
 		CF0375F51949D9FE00D50843 /* UIImage+AgentAdjust.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+AgentAdjust.h"; sourceTree = "<group>"; };
 		CF0375F61949D9FE00D50843 /* UIImage+AgentAdjust.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+AgentAdjust.m"; sourceTree = "<group>"; };
 		CF148BCB194480DE00CA094C /* Agent+Model.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Agent+Model.h"; sourceTree = "<group>"; };
@@ -574,9 +575,10 @@
 		CF2744EE193BDE160057C795 /* Malometer.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				49D76DB51964632B00E21BF7 /* Malometer 2.xcdatamodel */,
 				CF2744EF193BDE160057C795 /* Malometer.xcdatamodel */,
 			);
-			currentVersion = CF2744EF193BDE160057C795 /* Malometer.xcdatamodel */;
+			currentVersion = 49D76DB51964632B00E21BF7 /* Malometer 2.xcdatamodel */;
 			path = Malometer.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
