@@ -20,4 +20,10 @@
     return [results lastObject];
 }
 
++ (instancetype)createPowerInMOC:(NSManagedObjectContext*)managedObjectContext withName:(NSString *)name{
+    Power *power = [NSEntityDescription insertNewObjectForEntityForName:@"Power" inManagedObjectContext:managedObjectContext];
+    power.name = name;
+    return power;
+}
+
 @end

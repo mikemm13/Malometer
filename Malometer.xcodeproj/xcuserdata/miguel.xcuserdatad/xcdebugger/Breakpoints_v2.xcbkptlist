@@ -10,12 +10,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Malometer/JOFAgentsViewController.m"
-            timestampString = "426061553.956828"
+            timestampString = "426069609.356705"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "160"
-            endingLineNumber = "160"
-            landmarkName = "-fetchedResultsController"
+            startingLineNumber = "244"
+            endingLineNumber = "244"
+            landmarkName = "-saveContext"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -26,12 +26,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Malometer/JOFAgentsViewController.m"
-            timestampString = "426061770.13355"
+            timestampString = "426073608.341812"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "249"
-            endingLineNumber = "249"
-            landmarkName = "-saveContext"
+            startingLineNumber = "222"
+            endingLineNumber = "222"
+            landmarkName = "-configureCell:atIndexPath:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

@@ -11,5 +11,6 @@
 @interface Power (Model)
 
 + (Power *)fetchPowerInMOC:(NSManagedObjectContext *)managedObjectContext withName:(NSString *)name;
++ (instancetype)createPowerInMOC:(NSManagedObjectContext*)managedObjectContext withName:(NSString *)name;
 
 @end
