@@ -85,7 +85,7 @@
     
     NSPersistentStoreCoordinator *coordinator = [self persistentStoreCoordinator];
     if (coordinator != nil) {
-        _managedObjectContext = [[NSManagedObjectContext alloc] init];
+        _managedObjectContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSMainQueueConcurrencyType];
         [_managedObjectContext setPersistentStoreCoordinator:coordinator];
         
         [self prepareUndoManagerForContext:_managedObjectContext];
@@ -168,19 +168,23 @@
 #pragma mark - Fake importation
 
 - (void)fakeImporter{
-    FreakType *freakType = [FreakType createFreakTypeInMOC:self.managedObjectContext withName:@"SuperEvil"];
-    for (int i = 0; i < 10000; i++) {
-        Agent *agent = [Agent createAgentWithMOC:self.managedObjectContext withName:[NSString stringWithFormat:@"Agent %05d",i]];
-        agent.category = freakType;
-        usleep(500);
-    }
-    NSError *error = nil;
-    if (![self.managedObjectContext save:&error]) {
-        // Replace this implementation with code to handle the error appropriately.
-        // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-        abort();
-    }
+    __weak typeof (self) weakSelf = self;
+    [self.managedObjectContext performBlock:^{
+        __strong typeof (self) strongSelf = weakSelf;
+        FreakType *freakType = [FreakType createFreakTypeInMOC:strongSelf.managedObjectContext withName:@"SuperEvil"];
+        for (int i = 0; i < 10000; i++) {
+            Agent *agent = [Agent createAgentWithMOC:strongSelf.managedObjectContext withName:[NSString stringWithFormat:@"Agent %05d",i]];
+            agent.category = freakType;
+            usleep(500);
+        }
+        NSError *error = nil;
+        if (![strongSelf.managedObjectContext save:&error]) {
+            // Replace this implementation with code to handle the error appropriately.
+            // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+            NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+            abort();
+        }
+    }];
 
 }
 
