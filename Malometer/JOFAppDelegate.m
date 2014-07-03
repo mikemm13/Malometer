@@ -14,16 +14,25 @@
 #import "Agent.h"
 #import "Agent+Model.h"
 
+@interface JOFAppDelegate ()
+@property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
+@property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;
+@property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
+
+@property (readonly, strong, nonatomic) NSManagedObjectContext *backgroundManagedObjectContext;
+@end
 
 @implementation JOFAppDelegate
 
 @synthesize managedObjectContext = _managedObjectContext;
 @synthesize managedObjectModel = _managedObjectModel;
 @synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
+@synthesize backgroundManagedObjectContext = _backgroundManagedObjectContext;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    [self fakeImporter];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleNotification:) name:NSManagedObjectContextDidSaveNotification object:self.backgroundManagedObjectContext];
+    [self fakeImporterWithMOC:self.backgroundManagedObjectContext];
     // Override point for customization after application launch.
     UINavigationController *navigationController = (UINavigationController *)self.window.rootViewController;
     JOFAgentsViewController *controller = (JOFAgentsViewController *)navigationController.topViewController;
@@ -56,6 +65,7 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Saves changes in the application's managed object context before the application terminates.
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:NSManagedObjectContextDidSaveNotification object:self.backgroundManagedObjectContext];
     [self saveContext];
 }
 
@@ -92,6 +102,20 @@
         
     }
     return _managedObjectContext;
+}
+
+- (NSManagedObjectContext *)backgroundManagedObjectContext{
+    if (_backgroundManagedObjectContext != nil) {
+        return _backgroundManagedObjectContext;
+    }
+    
+    _backgroundManagedObjectContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSPrivateQueueConcurrencyType];
+    NSPersistentStoreCoordinator *coordinator = self.persistentStoreCoordinator;
+    if (coordinator){
+        self.backgroundManagedObjectContext.persistentStoreCoordinator = coordinator;
+    }
+    
+    return _backgroundManagedObjectContext;
 }
 
 - (void) prepareUndoManagerForContext:(NSManagedObjectContext *)moc {
@@ -167,25 +191,20 @@
 
 #pragma mark - Fake importation
 
-- (void)fakeImporter{
-    __weak typeof (self) weakSelf = self;
-    [self.managedObjectContext performBlock:^{
-        __strong typeof (self) strongSelf = weakSelf;
-        FreakType *freakType = [FreakType createFreakTypeInMOC:strongSelf.managedObjectContext withName:@"SuperEvil"];
+- (void)fakeImporterWithMOC:(NSManagedObjectContext *)managedObjectContext{
+    [managedObjectContext performBlock:^{
+        FreakType *freakType = [FreakType createFreakTypeInMOC:managedObjectContext withName:@"SuperEvil"];
         for (int i = 0; i < 10000; i++) {
-            Agent *agent = [Agent createAgentWithMOC:strongSelf.managedObjectContext withName:[NSString stringWithFormat:@"Agent %05d",i]];
+            Agent *agent = [Agent createAgentWithMOC:managedObjectContext withName:[NSString stringWithFormat:@"Agent %05d",i]];
             agent.category = freakType;
             usleep(500);
         }
-        NSError *error = nil;
-        if (![strongSelf.managedObjectContext save:&error]) {
-            // Replace this implementation with code to handle the error appropriately.
-            // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-            NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-            abort();
-        }
+        [managedObjectContext save:NULL];
     }];
+}
 
+- (void)handleNotification:(NSNotification *)notification{
+    [self.managedObjectContext mergeChangesFromContextDidSaveNotification:notification];
 }
 
 @end
