@@ -97,6 +97,12 @@ NSString *const agentPropertyName = @"name";
     
 }
 
++ (instancetype)createAgentWithMOC:(NSManagedObjectContext *)managedObjectContext withName:(NSString *)name{
+    Agent *agent = [NSEntityDescription insertNewObjectForEntityForName:@"Agent" inManagedObjectContext:managedObjectContext];
+    agent.name = name;
+    return agent;
+}
+
 
 #pragma mark - Picture logic
 

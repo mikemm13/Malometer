@@ -145,6 +145,7 @@ static NSString *const segueEditAgent   = @"EditAgent";
     // Edit the section name key path and cache name if appropriate.
     // nil for section name key path means "no sections".
 
+    [NSFetchedResultsController deleteCacheWithName:@"Agents"];
     NSSortDescriptor *categoryNameSortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"category.name" ascending:YES];
     NSSortDescriptor *destPowSortDescriptor = [NSSortDescriptor sortDescriptorWithKey:agentPropertyDestructionPower ascending:NO];
     NSSortDescriptor *nameSortDescriptor = [NSSortDescriptor sortDescriptorWithKey:agentPropertyName ascending:YES];

@@ -9,6 +9,10 @@
 
 #import "JOFAppDelegate.h"
 #import "JOFAgentsViewController.h"
+#import "FreakType.h"
+#import "FreakType+Model.h"
+#import "Agent.h"
+#import "Agent+Model.h"
 
 
 @implementation JOFAppDelegate
@@ -19,6 +23,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [self fakeImporter];
     // Override point for customization after application launch.
     UINavigationController *navigationController = (UINavigationController *)self.window.rootViewController;
     JOFAgentsViewController *controller = (JOFAgentsViewController *)navigationController.topViewController;
@@ -158,6 +163,25 @@
 - (NSURL *)applicationDocumentsDirectory
 {
     return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
+}
+
+#pragma mark - Fake importation
+
+- (void)fakeImporter{
+    FreakType *freakType = [FreakType createFreakTypeInMOC:self.managedObjectContext withName:@"SuperEvil"];
+    for (int i = 0; i < 10000; i++) {
+        Agent *agent = [Agent createAgentWithMOC:self.managedObjectContext withName:[NSString stringWithFormat:@"Agent %05d",i]];
+        agent.category = freakType;
+        usleep(500);
+    }
+    NSError *error = nil;
+    if (![self.managedObjectContext save:&error]) {
+        // Replace this implementation with code to handle the error appropriately.
+        // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+        abort();
+    }
+
 }
 
 @end

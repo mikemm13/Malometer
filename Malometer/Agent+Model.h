@@ -19,7 +19,10 @@ extern NSString *const agentPropertyName;
 + (NSFetchRequest *)fetchAllAgentsByName;
 + (NSFetchRequest *)fetchAllAgentsByNameWithPredicate:(NSPredicate *)predicate;
 + (NSFetchRequest *)fetchAllAgentsWithSortDescriptors:(NSArray *)sortDescriptors;
++ (instancetype)createAgentWithMOC:(NSManagedObjectContext *)managedObjectContext withName:(NSString *)name;
+
 - (NSString *) generatePictureUUID;
+
 
 
 @end
