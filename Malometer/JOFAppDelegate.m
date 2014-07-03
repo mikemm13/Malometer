@@ -20,6 +20,7 @@
 @property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 
 @property (readonly, strong, nonatomic) NSManagedObjectContext *backgroundManagedObjectContext;
+@property (readonly, strong, nonatomic) NSManagedObjectContext *rootMOC;
 @end
 
 @implementation JOFAppDelegate
@@ -28,10 +29,11 @@
 @synthesize managedObjectModel = _managedObjectModel;
 @synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
 @synthesize backgroundManagedObjectContext = _backgroundManagedObjectContext;
+@synthesize rootMOC = _rootMOC;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleNotification:) name:NSManagedObjectContextDidSaveNotification object:self.backgroundManagedObjectContext];
+    
     [self fakeImporterWithMOC:self.backgroundManagedObjectContext];
     // Override point for customization after application launch.
     UINavigationController *navigationController = (UINavigationController *)self.window.rootViewController;
@@ -65,7 +67,7 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Saves changes in the application's managed object context before the application terminates.
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:NSManagedObjectContextDidSaveNotification object:self.backgroundManagedObjectContext];
+    
     [self saveContext];
 }
 
@@ -96,10 +98,9 @@
     NSPersistentStoreCoordinator *coordinator = [self persistentStoreCoordinator];
     if (coordinator != nil) {
         _managedObjectContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSMainQueueConcurrencyType];
-        [_managedObjectContext setPersistentStoreCoordinator:coordinator];
         
+        [_managedObjectContext setParentContext:self.rootMOC];
         [self prepareUndoManagerForContext:_managedObjectContext];
-        
     }
     return _managedObjectContext;
 }
@@ -110,12 +111,23 @@
     }
     
     _backgroundManagedObjectContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSPrivateQueueConcurrencyType];
-    NSPersistentStoreCoordinator *coordinator = self.persistentStoreCoordinator;
-    if (coordinator){
-        self.backgroundManagedObjectContext.persistentStoreCoordinator = coordinator;
-    }
+    [_backgroundManagedObjectContext setParentContext:self.managedObjectContext];
     
     return _backgroundManagedObjectContext;
+}
+
+- (NSManagedObjectContext *)rootMOC{
+    if (_rootMOC != nil) {
+        return _rootMOC;
+    }
+    
+    _rootMOC = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSPrivateQueueConcurrencyType];
+    NSPersistentStoreCoordinator *coordinator = self.persistentStoreCoordinator;
+    if (coordinator){
+        self.rootMOC.persistentStoreCoordinator = coordinator;
+    }
+    
+    return _rootMOC;
 }
 
 - (void) prepareUndoManagerForContext:(NSManagedObjectContext *)moc {
@@ -203,8 +215,6 @@
     }];
 }
 
-- (void)handleNotification:(NSNotification *)notification{
-    [self.managedObjectContext mergeChangesFromContextDidSaveNotification:notification];
-}
+
 
 @end
