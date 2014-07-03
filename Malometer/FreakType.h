@@ -24,7 +24,6 @@
 - (void)addAgents:(NSSet *)values;
 - (void)removeAgents:(NSSet *)values;
 
-+ (instancetype) createFreakTypeInMOC:(NSManagedObjectContext *)managedObjectContext withName:(NSString *)name;
-+ (FreakType *)fetchFreakTypeInMOC:(NSManagedObjectContext *)managedObjectContext withName:(NSString *)name;
+
 
 @end

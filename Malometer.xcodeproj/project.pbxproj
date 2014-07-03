@@ -7,12 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		49536AF0196541D400B7354A /* Agent.m in Sources */ = {isa = PBXBuildFile; fileRef = 49536AEF196541D400B7354A /* Agent.m */; };
+		49536AF3196541D400B7354A /* Power.m in Sources */ = {isa = PBXBuildFile; fileRef = 49536AF2196541D400B7354A /* Power.m */; };
+		49536AF61965425700B7354A /* Power+Model.m in Sources */ = {isa = PBXBuildFile; fileRef = 49536AF51965425700B7354A /* Power+Model.m */; };
+		49536AF91965438000B7354A /* Domain+Model.m in Sources */ = {isa = PBXBuildFile; fileRef = 49536AF81965438000B7354A /* Domain+Model.m */; };
+		49536AFC196543BA00B7354A /* FreakType+Model.m in Sources */ = {isa = PBXBuildFile; fileRef = 49536AFB196543BA00B7354A /* FreakType+Model.m */; };
 		4997C3871962C9830067DED0 /* FreakType.m in Sources */ = {isa = PBXBuildFile; fileRef = 4997C3861962C9830067DED0 /* FreakType.m */; };
 		4997C38A1962C9830067DED0 /* Domain.m in Sources */ = {isa = PBXBuildFile; fileRef = 4997C3891962C9830067DED0 /* Domain.m */; };
 		4997C38C1962F5420067DED0 /* JOFAppDelegateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4997C38B1962F5420067DED0 /* JOFAppDelegateTests.m */; };
 		4997C38E19630F550067DED0 /* AgentTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4997C38D19630F550067DED0 /* AgentTests.m */; };
 		4997C38F196311390067DED0 /* Malometer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CF2744EE193BDE160057C795 /* Malometer.xcdatamodeld */; };
-		49D76DB81964667C00E21BF7 /* Agent.m in Sources */ = {isa = PBXBuildFile; fileRef = 49D76DB71964667C00E21BF7 /* Agent.m */; };
 		CF0375F71949D9FE00D50843 /* UIImage+AgentAdjust.m in Sources */ = {isa = PBXBuildFile; fileRef = CF0375F61949D9FE00D50843 /* UIImage+AgentAdjust.m */; };
 		CF148BCD194480DE00CA094C /* Agent+Model.m in Sources */ = {isa = PBXBuildFile; fileRef = CF148BCC194480DE00CA094C /* Agent+Model.m */; };
 		CF1EF2EB1949FF7B009D2E99 /* JOFImageMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = CF1EF2EA1949FF7B009D2E99 /* JOFImageMapper.m */; };
@@ -46,6 +50,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		491A9728196540730036B8DD /* Malometer 3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Malometer 3.xcdatamodel"; sourceTree = "<group>"; };
+		49536AEE196541D400B7354A /* Agent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Agent.h; sourceTree = "<group>"; };
+		49536AEF196541D400B7354A /* Agent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Agent.m; sourceTree = "<group>"; };
+		49536AF1196541D400B7354A /* Power.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Power.h; sourceTree = "<group>"; };
+		49536AF2196541D400B7354A /* Power.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Power.m; sourceTree = "<group>"; };
+		49536AF41965425700B7354A /* Power+Model.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Power+Model.h"; sourceTree = "<group>"; };
+		49536AF51965425700B7354A /* Power+Model.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Power+Model.m"; sourceTree = "<group>"; };
+		49536AF71965438000B7354A /* Domain+Model.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Domain+Model.h"; sourceTree = "<group>"; };
+		49536AF81965438000B7354A /* Domain+Model.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Domain+Model.m"; sourceTree = "<group>"; };
+		49536AFA196543BA00B7354A /* FreakType+Model.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FreakType+Model.h"; sourceTree = "<group>"; };
+		49536AFB196543BA00B7354A /* FreakType+Model.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FreakType+Model.m"; sourceTree = "<group>"; };
 		4997C3851962C9830067DED0 /* FreakType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FreakType.h; sourceTree = "<group>"; };
 		4997C3861962C9830067DED0 /* FreakType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FreakType.m; sourceTree = "<group>"; };
 		4997C3881962C9830067DED0 /* Domain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Domain.h; sourceTree = "<group>"; };
@@ -53,8 +68,6 @@
 		4997C38B1962F5420067DED0 /* JOFAppDelegateTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JOFAppDelegateTests.m; sourceTree = "<group>"; };
 		4997C38D19630F550067DED0 /* AgentTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AgentTests.m; sourceTree = "<group>"; };
 		49D76DB51964632B00E21BF7 /* Malometer 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Malometer 2.xcdatamodel"; sourceTree = "<group>"; };
-		49D76DB61964667C00E21BF7 /* Agent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Agent.h; sourceTree = "<group>"; };
-		49D76DB71964667C00E21BF7 /* Agent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Agent.m; sourceTree = "<group>"; };
 		CF0375F51949D9FE00D50843 /* UIImage+AgentAdjust.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+AgentAdjust.h"; sourceTree = "<group>"; };
 		CF0375F61949D9FE00D50843 /* UIImage+AgentAdjust.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+AgentAdjust.m"; sourceTree = "<group>"; };
 		CF148BCB194480DE00CA094C /* Agent+Model.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Agent+Model.h"; sourceTree = "<group>"; };
@@ -130,11 +143,19 @@
 				4997C3891962C9830067DED0 /* Domain.m */,
 				4997C3851962C9830067DED0 /* FreakType.h */,
 				4997C3861962C9830067DED0 /* FreakType.m */,
-				CF2744EE193BDE160057C795 /* Malometer.xcdatamodeld */,
-				49D76DB61964667C00E21BF7 /* Agent.h */,
-				49D76DB71964667C00E21BF7 /* Agent.m */,
+				49536AEE196541D400B7354A /* Agent.h */,
+				49536AEF196541D400B7354A /* Agent.m */,
+				49536AF1196541D400B7354A /* Power.h */,
+				49536AF2196541D400B7354A /* Power.m */,
+				49536AF41965425700B7354A /* Power+Model.h */,
+				49536AF51965425700B7354A /* Power+Model.m */,
 				CF148BCB194480DE00CA094C /* Agent+Model.h */,
 				CF148BCC194480DE00CA094C /* Agent+Model.m */,
+				CF2744EE193BDE160057C795 /* Malometer.xcdatamodeld */,
+				49536AF71965438000B7354A /* Domain+Model.h */,
+				49536AF81965438000B7354A /* Domain+Model.m */,
+				49536AFA196543BA00B7354A /* FreakType+Model.h */,
+				49536AFB196543BA00B7354A /* FreakType+Model.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -344,12 +365,16 @@
 				CF2744EA193BDE160057C795 /* JOFAppDelegate.m in Sources */,
 				CF2744E6193BDE160057C795 /* main.m in Sources */,
 				CF148BCD194480DE00CA094C /* Agent+Model.m in Sources */,
+				49536AF3196541D400B7354A /* Power.m in Sources */,
 				CF2744F3193BDE160057C795 /* JOFAgentsViewController.m in Sources */,
 				4997C38A1962C9830067DED0 /* Domain.m in Sources */,
-				49D76DB81964667C00E21BF7 /* Agent.m in Sources */,
+				49536AF0196541D400B7354A /* Agent.m in Sources */,
 				CF2744F0193BDE160057C795 /* Malometer.xcdatamodeld in Sources */,
 				4997C3871962C9830067DED0 /* FreakType.m in Sources */,
+				49536AF91965438000B7354A /* Domain+Model.m in Sources */,
+				49536AF61965425700B7354A /* Power+Model.m in Sources */,
 				CF1EF2EB1949FF7B009D2E99 /* JOFImageMapper.m in Sources */,
+				49536AFC196543BA00B7354A /* FreakType+Model.m in Sources */,
 				CF0375F71949D9FE00D50843 /* UIImage+AgentAdjust.m in Sources */,
 				CF2744F6193BDE160057C795 /* JOFAgentEditViewController.m in Sources */,
 			);
@@ -575,6 +600,7 @@
 		CF2744EE193BDE160057C795 /* Malometer.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				491A9728196540730036B8DD /* Malometer 3.xcdatamodel */,
 				49D76DB51964632B00E21BF7 /* Malometer 2.xcdatamodel */,
 				CF2744EF193BDE160057C795 /* Malometer.xcdatamodel */,
 			);

@@ -1,8 +1,8 @@
 //
-//  Domain.h
+//  Power.h
 //  Malometer
 //
-//  Created by Miguel Martin Nieto on 01/07/14.
+//  Created by Miguel Martin Nieto on 03/07/14.
 //  Copyright (c) 2014 PoWWaU. All rights reserved.
 //
 
@@ -11,19 +11,17 @@
 
 @class Agent;
 
-@interface Domain : NSManagedObject
+@interface Power : NSManagedObject
 
 @property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) NSSet *agents;
 @end
 
-@interface Domain (CoreDataGeneratedAccessors)
+@interface Power (CoreDataGeneratedAccessors)
 
 - (void)addAgentsObject:(Agent *)value;
 - (void)removeAgentsObject:(Agent *)value;
 - (void)addAgents:(NSSet *)values;
 - (void)removeAgents:(NSSet *)values;
-
-
 
 @end

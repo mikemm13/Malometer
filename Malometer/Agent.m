@@ -2,7 +2,7 @@
 //  Agent.m
 //  Malometer
 //
-//  Created by Miguel Martin Nieto on 02/07/14.
+//  Created by Miguel Martin Nieto on 03/07/14.
 //  Copyright (c) 2014 PoWWaU. All rights reserved.
 //
 
@@ -18,8 +18,8 @@
 @dynamic motivation;
 @dynamic name;
 @dynamic pictureUUID;
-@dynamic power;
 @dynamic category;
 @dynamic domains;
+@dynamic powers;
 
 @end

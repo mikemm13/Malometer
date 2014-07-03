@@ -15,25 +15,5 @@
 @dynamic name;
 @dynamic agents;
 
-+ (instancetype)createDomainInMOC:(NSManagedObjectContext *)managedObjectContext withName:(NSString *)name{
-    Domain *domain = [NSEntityDescription insertNewObjectForEntityForName:@"Domain" inManagedObjectContext:managedObjectContext];
-    domain.name = name;
-    return domain;
-}
 
-+ (Domain *)fetchDomainInMOC:(NSManagedObjectContext *)managedObjectContext withName:(NSString *)name{
-    NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Domain"];
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"%K==%@",@"name",name];
-    fetchRequest.predicate = predicate;
-    
-    NSError *error;
-    NSArray *results = [managedObjectContext executeFetchRequest:fetchRequest error:&error];
-    return [results lastObject];
-}
-
-+ (NSFetchRequest *) fetchRequestControlledDomains {
-    NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Domain"];
-    fetchRequest.predicate = [NSPredicate predicateWithFormat:@"(SUBQUERY(agents,$x,$x.destructionPower >= 3)).@count > 1"];
-    return fetchRequest;
-}
 @end

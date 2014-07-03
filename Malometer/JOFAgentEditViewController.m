@@ -12,6 +12,8 @@
 #import "JOFImageMapper.h"
 #import "FreakType.h"
 #import "Domain.h"
+#import "FreakType+Model.h"
+#import "Domain+Model.h"
 
 typedef NS_ENUM(NSInteger, actionSheetButtons) {
     actionSheetTakePicture = 0, // actionSheet.firstOtherButtonIndex
